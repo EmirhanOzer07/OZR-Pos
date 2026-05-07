@@ -40,6 +40,9 @@ Küçük ve orta ölçekli marketler için geliştirilmiş, **internet bağlant�
 ### Yedekleme Sistemi
 ![Yedek](docs/screenshots/yedek.png)
 
+### Otomatik Güncelleme
+![Güncelleme](docs/screenshots/guncelleme.png)
+
 ---
 
 ## Özellikler
