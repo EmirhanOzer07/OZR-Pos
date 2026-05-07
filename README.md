@@ -43,6 +43,9 @@ Küçük ve orta ölçekli marketler için geliştirilmiş, **internet bağlant�
 ### Otomatik Güncelleme
 ![Güncelleme](docs/screenshots/guncelleme.png)
 
+### Demo Modu — Hesap Oluşturma
+![Demo](docs/screenshots/demo.png)
+
 ---
 
 ## Özellikler
