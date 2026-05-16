@@ -1,28 +1,29 @@
 ---
-name: Hata Bildirimi
-about: Beklenmeyen bir davranış veya hata bildirin
+name: Hata Bildirimi / Bug Report
+about: Uygulamada beklenmedik bir sorun mu yasiyorsunuz? Bildirin.
 title: '[BUG] '
 labels: bug
 assignees: EmirhanOzer07
 ---
 
-**Hatanın Kısa Açıklaması**
-Hatayı bir iki cümleyle açıklayın.
+## Sorun Nedir?
+Ne oldugunu kisaca aciklayin.
 
-**Yeniden Üretme Adımları**
-1. '...' ekranına git
-2. '...' butonuna tıkla
-3. Hatayı gör
+## Ne Yapiyordunuz?
+Hatadan once hangi adimlari izlediniz?
+1. 
+2. 
+3. 
 
-**Beklenen Davranış**
-Ne olması gerekiyordu?
+## Ne Olmasini Bekliyordunuz?
 
-**Gerçekleşen Davranış**
-Ne oldu?
+## Bilgiler
+- **OZR POS Surum:** (Giris ekraninda alt kosede yazar — or. v2.2.2)
+- **Windows Surum:** (or. Windows 11)
 
-**Ekran Görüntüsü / Log**
-Varsa ekleyin.
+## Ekran Goruntusu veya Hata Mesaji
+Varsa buraya ekleyin.
 
-**Ortam**
-- OZR POS Sürüm: [ör. v2.1.0]
-- Windows Sürüm: [ör. Windows 11 22H2]
+---
+> **Daha hizli yanit icin:** emirhann0077@gmail.com adresine e-posta gonderebilirsiniz.
+> Genellikle 24 saat icinde yanitlanmaktadir.
