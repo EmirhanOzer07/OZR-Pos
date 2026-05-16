@@ -109,21 +109,21 @@
 
 ### TR — Nasıl Lisans Alınır?
 
-1. Uygulamayı kurun ve açın
-2. Kayıt ekranındaki benzersiz **Davetiye Kodu**'nu kopyalayın
-3. Davetiye kodunuzu **emirhann0077@gmail.com** adresine e-posta ile gönderin → Marketinize özel lisans kodu iletilir
-4. Kodu uygulamaya girin — marketiniz aktive edilir
+1. Uygulamayı kurun ve açın — 15 günlük ücretsiz demo otomatik başlar
+2. Lisans satın almak için **[emirhann0077@gmail.com](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi)** adresine e-posta gönderin
+3. Tarafınıza 8 karakterlik **davetiye kodu** iletilir
+4. Kodu uygulamanın kayıt ekranına girin → marketiniz aktive edilir
 
-> Davetiye kodu makineye özgüdür. Lisanslar market başına satılmaktadır.
+> Lisanslar market başına satılmaktadır. Demo süresi boyunca tüm özellikler tam çalışır.
 
 ### EN — How to Get a License
 
-1. Install and open the application
-2. Copy the unique **Invitation Code** shown on the registration screen
-3. Email your invitation code to **emirhann0077@gmail.com** → A license code for your store will be sent back
-4. Enter the code in the app — your store is activated
+1. Install and open the application — 15-day free demo starts automatically
+2. To purchase a license, email **[emirhann0077@gmail.com](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20License%20Request)**
+3. You will receive an 8-character **invitation code**
+4. Enter the code on the app's registration screen → your store is activated
 
-> The invitation code is machine-specific. Licenses are sold per store.
+> Licenses are sold per store. All features work fully during the demo period.
 
 | | |
 |---|---|
