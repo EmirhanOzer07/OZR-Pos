@@ -67,6 +67,8 @@
 
 ## 🎯 15 Günlük Ücretsiz Demo / 15-Day Free Trial
 
+![Demo](docs/screenshots/demo.png)
+
 **TR:** İlk açılışta **"Demo Başlat"** butonuna tıklayın. 15 gün boyunca tüm özellikler tam olarak çalışır. Demo süresi dolduğunda lisans anahtarı ile aynı kurulumdan devam edin — verileriniz korunur.
 
 **EN:** Click **"Start Demo"** on first launch. All features work fully for 15 days. After the trial, enter your license key to continue from where you left off — your data is preserved.
