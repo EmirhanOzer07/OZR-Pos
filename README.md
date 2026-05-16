@@ -112,7 +112,7 @@
 ### TR — Nasıl Lisans Alınır?
 
 1. Uygulamayı kurun ve açın — 15 günlük ücretsiz demo otomatik başlar
-2. Lisans satın almak için <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi"><strong>emirhann0077@gmail.com</strong></a> adresine e-posta gönderin
+2. Lisans satın almak için aşağıdaki adrese e-posta gönderin
 3. Tarafınıza 8 karakterlik **davetiye kodu** iletilir
 4. Kodu uygulamanın kayıt ekranına girin → marketiniz aktive edilir
 
@@ -121,7 +121,7 @@
 ### EN — How to Get a License
 
 1. Install and open the application — 15-day free demo starts automatically
-2. To purchase a license, email <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20License%20Request"><strong>emirhann0077@gmail.com</strong></a>
+2. Send an email to the address below to purchase a license
 3. You will receive an 8-character **invitation code**
 4. Enter the code on the app's registration screen → your store is activated
 
@@ -129,7 +129,7 @@
 
 | | |
 |---|---|
-| **Email / E-posta** | <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi">emirhann0077@gmail.com</a> |
+| **Email / E-posta** | **emirhann0077@gmail.com** |
 | **Yanıt Süresi / Response** | 24 saat içinde / Within 24 hours |
 
 ---
