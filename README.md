@@ -10,7 +10,7 @@
 [![Guvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#veri-guvenligi--data-security)
 [![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE)
 
-[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi) &nbsp;·&nbsp; [**İletişim / Contact**](mailto:emirhann0077@gmail.com)
+[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](#lisans-iletisim) &nbsp;·&nbsp; [**İletişim / Contact**](#lisans-iletisim)
 
 </div>
 
@@ -105,12 +105,14 @@
 
 ---
 
+<a id="lisans-iletisim"></a>
+
 ## 🔑 Lisans ve İletişim / License & Contact
 
 ### TR — Nasıl Lisans Alınır?
 
 1. Uygulamayı kurun ve açın — 15 günlük ücretsiz demo otomatik başlar
-2. Lisans satın almak için **[emirhann0077@gmail.com](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi)** adresine e-posta gönderin
+2. Lisans satın almak için <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi"><strong>emirhann0077@gmail.com</strong></a> adresine e-posta gönderin
 3. Tarafınıza 8 karakterlik **davetiye kodu** iletilir
 4. Kodu uygulamanın kayıt ekranına girin → marketiniz aktive edilir
 
@@ -119,7 +121,7 @@
 ### EN — How to Get a License
 
 1. Install and open the application — 15-day free demo starts automatically
-2. To purchase a license, email **[emirhann0077@gmail.com](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20License%20Request)**
+2. To purchase a license, email <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20License%20Request"><strong>emirhann0077@gmail.com</strong></a>
 3. You will receive an 8-character **invitation code**
 4. Enter the code on the app's registration screen → your store is activated
 
@@ -127,7 +129,7 @@
 
 | | |
 |---|---|
-| **Email / E-posta** | emirhann0077@gmail.com |
+| **Email / E-posta** | <a href="mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi">emirhann0077@gmail.com</a> |
 | **Yanıt Süresi / Response** | 24 saat içinde / Within 24 hours |
 
 ---
