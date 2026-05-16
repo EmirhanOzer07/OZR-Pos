@@ -10,7 +10,7 @@
 [![Guvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#veri-guvenligi--data-security)
 [![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE)
 
-[**İndir / Download**](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest) &nbsp;·&nbsp; [**Lisans Al / Get License**](#lisans-ve-iletisim--license--contact) &nbsp;·&nbsp; [**İletişim / Contact**](#lisans-ve-iletisim--license--contact)
+[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](mailto:emirhann0077@gmail.com?subject=OZR%20POS%20Lisans%20Talebi) &nbsp;·&nbsp; [**İletişim / Contact**](mailto:emirhann0077@gmail.com)
 
 </div>
 
@@ -75,6 +75,8 @@
 
 ---
 
+<a id="kurulum"></a>
+
 ## 🚀 Kurulum / Installation
 
 **Gereksinimler / Requirements:** Windows 10/11 (64-bit) — Java kurulumu gerekmez / No Java required
@@ -109,7 +111,7 @@
 
 1. Uygulamayı kurun ve açın
 2. Kayıt ekranındaki benzersiz **Davetiye Kodu**'nu kopyalayın
-3. Kodu e-posta ile gönderin → Marketinize özel lisans kodu iletilir
+3. Davetiye kodunuzu **emirhann0077@gmail.com** adresine e-posta ile gönderin → Marketinize özel lisans kodu iletilir
 4. Kodu uygulamaya girin — marketiniz aktive edilir
 
 > Davetiye kodu makineye özgüdür. Lisanslar market başına satılmaktadır.
@@ -118,7 +120,7 @@
 
 1. Install and open the application
 2. Copy the unique **Invitation Code** shown on the registration screen
-3. Send the code by email → A license code for your store will be sent back
+3. Email your invitation code to **emirhann0077@gmail.com** → A license code for your store will be sent back
 4. Enter the code in the app — your store is activated
 
 > The invitation code is machine-specific. Licenses are sold per store.
