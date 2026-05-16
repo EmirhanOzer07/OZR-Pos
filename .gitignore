@@ -1,0 +1,53 @@
+# ============================================================
+# Bu repo yalnızca vitrin amaçlıdır.
+# Kaynak kod, build araçları ve geliştirici dosyaları burada olmaz.
+# ============================================================
+
+# Kaynak kod ve build araçları
+src/
+pom.xml
+.mvn/
+mvnw
+mvnw.cmd
+build-installer.bat
+build-package.bat
+CHANGELOG.md
+SECURITY.md
+
+# Derleme çıktısı
+target/
+dist/
+*.jar
+*.zip
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Hassas dosyalar
+.env
+.env.*
+*.dbkey
+*.p12
+*.jks
+config.properties
+patron.cfg
+.patron_lock
+*.log
+logs/
+
+# Claude Code
+.claude/
