@@ -1,19 +1,20 @@
 ---
-name: Özellik İsteği
-about: Yeni bir özellik veya iyileştirme önerin
-title: '[FEATURE] '
+name: Ozellik Onerisi / Feature Request
+about: Yeni bir ozellik veya iyilestirme onermek ister misiniz?
+title: '[ONERI] '
 labels: enhancement
 assignees: ''
 ---
 
-**Özelliğin Açıklaması**
-Neyi yapmak istiyorsunuz?
+## Ne Gormek Istiyorsunuz?
+Onerdiginiz ozelligi veya iyilestirmeyi aciklayin.
 
-**Motivasyon**
-Bu özellik neden gerekli? Hangi sorunu çözüyor?
+## Neden Bu Ozellik Gerekli?
+Bu ozellik hangi sorunu coziyor ya da neyi kolaylastiriyor?
 
-**Önerilen Çözüm**
-Nasıl çalışmasını önerirsiniz?
+## Ek Bilgi
+Varsa ornek, ekran goruntusu veya referans ekleyin.
 
-**Alternatifler**
-Başka bir yol düşündünüz mü?
+---
+> **Not:** Oneriler degerlendirilecek ve gelecek surumlerde hayata gecirilecektir.
+> Dogrudan iletisim: emirhann0077@gmail.com
