@@ -10,7 +10,7 @@
 [![Guvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#veri-guvenligi--data-security)
 [![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE)
 
-[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](#lisans-iletisim) &nbsp;·&nbsp; [**İletişim / Contact**](#lisans-iletisim)
+[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](#lisans-iletisim) &nbsp;·&nbsp; [**Yedek Rehberi / Backup Guide**](docs/YEDEK_REHBERI.md) &nbsp;·&nbsp; [**İletişim / Contact**](#lisans-iletisim)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 📸 Ekran Görüntüleri / Screenshots
+## Ekran Görüntüleri / Screenshots
 
 ### Kasa / Satış Ekranı
 ![Satış](docs/screenshots/satis.png)
@@ -49,7 +49,7 @@
 
 ---
 
-## ✨ Özellikler / Features
+## Özellikler / Features
 
 | | TR | EN |
 |---|---|---|
@@ -65,7 +65,7 @@
 
 ---
 
-## 🎯 15 Günlük Ücretsiz Demo / 15-Day Free Trial
+## 15 Günlük Ücretsiz Demo / 15-Day Free Trial
 
 ![Demo](docs/screenshots/demo.png)
 
@@ -77,7 +77,7 @@
 
 <a id="kurulum"></a>
 
-## 🚀 Kurulum / Installation
+## Kurulum / Installation
 
 **Gereksinimler / Requirements:** Windows 10/11 (64-bit) — Java kurulumu gerekmez / No Java required
 
@@ -107,7 +107,7 @@
 
 <a id="lisans-iletisim"></a>
 
-## 🔑 Lisans ve İletişim / License & Contact
+## Lisans ve İletişim / License & Contact
 
 ### TR — Nasıl Lisans Alınır?
 
@@ -134,7 +134,7 @@
 
 ---
 
-## ❓ Sık Sorulan Sorular / FAQ
+## Sık Sorulan Sorular / FAQ
 
 <details>
 <summary><strong>İnternet bağlantısı şart mı? / Is internet required?</strong></summary>
@@ -167,21 +167,35 @@
 <details>
 <summary><strong>Bilgisayar bozulursa verilerimi kurtarabilir miyim? / What if my computer breaks?</strong></summary>
 
-**TR:** Otomatik yedekler `AppData\Local\MarketPOS\yedek\` klasöründe. Düzenli olarak USB'ye kopyalayın. `dbkey.bak` dosyasını mutlaka yedekleyin — kaybolursa veriler kurtarılamaz.
+**TR:** Evet — yedek aldıysanız. Detaylı kurtarma rehberi için: [**Yedek ve Kurtarma Rehberi**](docs/YEDEK_REHBERI.md)
 
-**EN:** Automatic backups are in `AppData\Local\MarketPOS\yedek\`. Copy to USB regularly. Always back up `dbkey.bak` — if lost, data cannot be recovered.
+Özet: Uygulama her gece otomatik yedek alır. Bu yedekleri Google Drive ile senkronize etmenizi öneririz. Bilgisayar değişirse lisans aktarımı için bizimle iletişime geçin — ücretsizdir.
+
+**EN:** Yes — if you have backups. See the full guide: [**Backup & Recovery Guide**](docs/YEDEK_REHBERI.md)
+
+Summary: The app takes automatic backups every night. We recommend syncing them to Google Drive. If you change computers, contact us for a free license transfer.
+</details>
+
+<details>
+<summary><strong>Otomatik güncelleme nasıl çalışır? / How do auto-updates work?</strong></summary>
+
+**TR:** Uygulama her açılışta arka planda yeni sürüm olup olmadığını kontrol eder. Yeni sürüm varsa bildirim gelir, onayladıktan sonra güncelleme indirilir ve uygulanır. Verileriniz korunur.
+
+**EN:** The app silently checks for updates on each launch. When a new version is available, you'll be notified. After confirmation, the update is downloaded and applied. Your data is preserved.
 </details>
 
 ---
 
-## 🔒 Veri Güvenliği / Data Security
+<a id="veri-guvenligi--data-security"></a>
+
+## Veri Güvenliği / Data Security
 
 | Katman / Layer | Uygulama / Implementation |
 |---|---|
 | Veritabanı / Database | AES-256 şifreleme, kuruluma özel anahtar / AES-256 encryption, per-install key |
 | Kimlik Doğrulama / Auth | JWT (HMAC-SHA256) + BCrypt |
 | Hız Sınırı / Rate Limit | IP başına 10 istek/dk / 10 req/min per IP |
-| Yetkilendirme / Authorization | Spring Security 6 + role-based access |
+| Yetkilendirme / Authorization | Role tabanlı erişim kontrolü / Role-based access control |
 
 > **TR:** Tüm şifreleme anahtarları kurulum sırasında üretilir ve yalnızca sizin makinenizde saklanır. OZR POS, işletme verilerinizi hiçbir sunucuya iletmez.
 
@@ -189,7 +203,15 @@
 
 ---
 
-## 📄 Lisans / License
+## Sürüm Geçmişi / Changelog
+
+Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
+
+**Son sürüm / Latest:** v2.2.10 — Satış hızlandı, yedek kapsamı genişletildi, bellek iyileştirmesi
+
+---
+
+## Lisans / License
 
 Copyright © 2026 Mustafa Emirhan Özer. Tüm hakları saklıdır / All rights reserved.
 
