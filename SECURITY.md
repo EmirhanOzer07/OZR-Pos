@@ -1,25 +1,43 @@
-# Guvenlik Politikasi / Security Policy
+# Güvenlik Politikası / Security Policy
 
-## Desteklenen Surumler / Supported Versions
+## Desteklenen Sürümler / Supported Versions
 
-| Surum / Version | Destek / Support |
+| Sürüm / Version | Destek / Support |
 |---|---|
-| Son surum / Latest | Aktif / Active |
-| Eski surumler / Older | Desteklenmez / Not supported |
+| Son sürüm / Latest | ✅ Aktif / Active |
+| Eski sürümler / Older | ❌ Desteklenmez / Not supported |
 
-## Guvenlik Acigi Bildirimi / Reporting a Vulnerability
+Güvenlik güncellemeleri yalnızca en son sürüme uygulanır. Mevcut sürümünüzü güncel tutmanızı öneririz.
 
-**TR:** Bir guvenlik acigi kesfettiyseniz lutfen bunu herkese acik GitHub Issue olarak bildirmeyin.
-Asagidaki e-posta adresine ozel olarak bildirin:
+Security updates are only applied to the latest release. We recommend keeping your installation up to date.
 
-**EN:** If you discover a security vulnerability, please do not open a public GitHub Issue.
+---
+
+## Güvenlik Açığı Bildirimi / Reporting a Vulnerability
+
+**TR:** Bir güvenlik açığı keşfettiyseniz lütfen bunu herkese açık GitHub Issue olarak bildirmeyin.
+Aşağıdaki e-posta adresine **özel** olarak bildirin:
+
+**EN:** If you discover a security vulnerability, please do **not** open a public GitHub Issue.
 Report it privately to:
 
 **emirhann0077@gmail.com**
 
-Bildiriminize lutfen asagidakileri ekleyin / Please include:
-- Acigi nasil kesfettiginiz / How you discovered it  
-- Yeniden uretme adimlari / Steps to reproduce  
-- Olasi etkisi / Potential impact  
+---
 
-**Yanit suresi / Response time:** 48 saat icinde / Within 48 hours
+## Bildiriminize Lütfen Ekleyin / Please Include
+
+- Açığı nasıl keşfettiğiniz / How you discovered it
+- Yeniden üretme adımları / Steps to reproduce
+- Olası etkisi / Potential impact
+- Kullandığınız sürüm / Version you are using
+
+---
+
+## Yanıt Süresi / Response Time
+
+| Aşama / Stage | Süre / Time |
+|---|---|
+| İlk yanıt / Initial response | 48 saat içinde / Within 48 hours |
+| Durum güncellemesi / Status update | 5 iş günü içinde / Within 5 business days |
+| Yama / Patch | Ciddiyete göre değişir / Depends on severity |
