@@ -2,6 +2,28 @@
 
 ---
 
+## v2.2.11 — 2026-05-22
+
+### TR — Değişiklikler
+
+**Düzeltmeler**
+- Güncelleme ekranı: indirme sırasında ilerleme çubuğu boş görünüyordu, animasyon artık düzgün çalışıyor
+- Güncelleme tamamlandıktan sonra "Güncelleme başarıyla tamamlandı" onay ekranı bazen görünmüyordu, düzeltildi
+
+**İyileştirmeler**
+- Güncelleme indirme sırasında gereksiz arayüz çağrıları azaltıldı → daha akıcı ilerleme göstergesi
+
+### EN — Changes
+
+**Fixes**
+- Update screen: progress bar appeared empty during download; animation now works correctly
+- "Update completed successfully" confirmation dialog was sometimes missing after update; fixed
+
+**Improvements**
+- Reduced unnecessary UI calls during update download for smoother progress display
+
+---
+
 ## v2.2.10 — 2026-05-22
 
 ### TR — Değişiklikler
