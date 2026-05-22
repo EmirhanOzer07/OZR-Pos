@@ -2,6 +2,48 @@
 
 ---
 
+## v2.3.0 — 2026-05-22
+
+### TR — Değişiklikler
+
+**Güvenlik**
+- UrunController: `@Cacheable` kaldırıldı — cache hit'te market yetki kontrolü atlanıyordu, artık her istekte çalışır
+- SatisRepository: `findAllByKullaniciId` sorgusuna eksik `market.id` filtresi eklendi
+
+**Düzeltmeler**
+- CSV yükleme: 1 MB'dan büyük dosyalar Spring multipart filtresi nedeniyle 500 döndürüyordu; artık 5 MB'ya kadar destekleniyor
+- CSV yükleme: toplu yükleme yedeği artık transaction commit sonrası alınıyor — yeni ürünler artık yedeğe dahil
+- VeriTabaniAnahtarService: `icacls` process pipe buffer deadlock riski giderildi
+- Büyük dosya yükleme hatası artık "Sunucu hatası oluştu" yerine anlaşılır mesaj veriyor
+
+**Testler**
+- JWT süresi dolmuş token reddi testi eklendi
+- Satış özeti endpoint'inde market izolasyon testi eklendi
+- CSV dosya boyutu sınırı (5 MB) testi eklendi
+- CSV hatalı Content-Type reddi testi eklendi (CWE-434)
+- Toplam test sayısı: 118
+
+### EN — Changes
+
+**Security**
+- UrunController: removed `@Cacheable` — authorization check was bypassed on cache hits; now runs on every request
+- SatisRepository: added missing `market.id` filter to `findAllByKullaniciId`
+
+**Fixes**
+- CSV upload: files larger than 1 MB returned HTTP 500 due to Spring multipart limit; now supports up to 5 MB
+- CSV upload: bulk upload backup now taken after transaction commit — newly added products are included
+- VeriTabaniAnahtarService: fixed `icacls` process pipe buffer deadlock risk
+- Large file upload error now returns a clear user message instead of "Server error"
+
+**Tests**
+- Added JWT expired token rejection test
+- Added sales summary endpoint market isolation test
+- Added CSV file size limit (5 MB) test
+- Added CSV wrong Content-Type rejection test (CWE-434)
+- Total test count: 118
+
+---
+
 ## v2.2.11 — 2026-05-22
 
 ### TR — Değişiklikler
