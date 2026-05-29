@@ -2,6 +2,86 @@
 
 ---
 
+## v2.3.3 — 2026-05-29
+
+### TR — Değişiklikler
+
+**Kasa Ekranı**
+- Bildirim kutusu artık kasa ekranının odağını çalmıyor — barkod okumaya devam edilebilir
+- Hızlı ürün tuşlarına miktar öneki desteği: `3*barkod` yazıp Enter ile doğrudan 3 adet eklenebilir
+- Hızlı ürün tuşlarına sağ tık menüsü eklendi: isim/fiyat düzenleme ve tuşu kaldırma
+- Bulunamayan barkodlar listesine zaman damgası eklendi; liste uygulama yeniden başlatılsa bile korunur
+- Ağ durumu göstergesi: ürün önbelleği yüklenirken bağlantı başarısız olursa kırmızı uyarı
+
+**Yönetim Ekranı**
+- Rapor sekmesine "Tüm Zamanlar" butonu eklendi — tüm geçmişi tek tıkla görüntüleme
+- Ciro sekmesi kaldırıldı (rapor sekmesi tüm ihtiyacı karşılıyor)
+
+**Patron Ekranı**
+- Market tablosuna "Son Bağlantı" sütunu eklendi — her marketin en son ne zaman aktif olduğu görülebiliyor (Az önce / N saat önce / N gün önce / Hiç bağlanmadı)
+
+**Teknik**
+- Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
+- Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
+
+### EN — Changes
+
+**Sales Screen**
+- Notification popup no longer steals focus from the barcode field — scanning can continue uninterrupted
+- Quick product buttons now support quantity prefix: type `3*barcode` + Enter to add 3 units at once
+- Right-click menu on quick product buttons: edit name/price or remove the button
+- Not-found barcode list now shows timestamps; list persists across app restarts
+- Network indicator: turns red if product cache fails to load on startup
+
+**Management Screen**
+- "All Time" button added to the Report tab — view full history with one click
+- Revenue tab removed (the Report tab covers all use cases)
+
+**Owner Screen**
+- "Last Connection" column added to market table — shows when each store last connected (Just now / N hours ago / N days ago / Never connected)
+
+**Technical**
+- Receipt printing errors now shown as in-app notifications even when no printer is found
+- CSS temp file is no longer recreated on every theme toggle (caching)
+
+---
+
+## v2.3.2 — 2026-05-28
+
+### TR — Değişiklikler
+
+**Düzeltmeler**
+- JWT oturumu sona erince uygulama sessizce çöküyor ve giriş ekranına dönmüyordu; artık otomatik olarak giriş ekranına yönlendiriyor
+- SHA-256 doğrulaması: bazı sistemlerde dosya hash'i başına BOM karakteri ekleniyordu; temizlendi — güncelleme doğrulama hatası giderildi
+- Uygulama simgesi düzeltildi (piksel bozulması)
+
+### EN — Changes
+
+**Fixes**
+- When the JWT session expired, the app crashed silently without returning to the login screen; it now redirects automatically
+- SHA-256 verification: some systems prepended a BOM character to the file hash, causing update validation to fail; cleaned up
+- Application icon rendering fix (pixel corruption)
+
+---
+
+## v2.3.1 — 2026-05-23
+
+### TR — Değişiklikler
+
+**İyileştirmeler**
+- v2.3.0 kullanıcılarının otomatik güncelleme alabilmesi için sürüm numarası güncellendi
+- Tablo sütun genişlikleri DPI ölçeğine göre düzeltildi — farklı ekran çözünürlüklerinde görünüm bozulmuyor
+- Giriş ekranı tam ekranda açılıyor
+
+### EN — Changes
+
+**Improvements**
+- Version number updated so v2.3.0 users receive the auto-update notification
+- Table column widths fixed for DPI scaling — layout no longer breaks on non-standard resolutions
+- Login screen now opens in full-screen mode
+
+---
+
 ## v2.3.0 — 2026-05-22
 
 ### TR — Değişiklikler
