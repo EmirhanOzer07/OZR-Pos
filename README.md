@@ -207,7 +207,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.2.10 — Satış hızlandı, yedek kapsamı genişletildi, bellek iyileştirmesi
+**Son sürüm / Latest:** v2.3.3 — Bildirim odak düzeltmesi, hızlı ürün geliştirmeleri, son bağlantı takibi
 
 ---
 
