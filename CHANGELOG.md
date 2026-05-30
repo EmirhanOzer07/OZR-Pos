@@ -20,8 +20,11 @@
 **Patron Ekranı**
 - Market tablosuna "Son Bağlantı" sütunu eklendi — her marketin en son ne zaman aktif olduğu görülebiliyor (Az önce / N saat önce / N gün önce / Hiç bağlanmadı)
 
-**Teknik**
+**Düzeltmeler**
+- **Uygulama simgesi düzeltildi:** v2.3.2 güncellemesiyle birlikte exe içine gömülen ikon bozulmuştu; Windows varsayılan ikonu görünüyordu. Kök neden: ICO dosyası eski BMP formatındaydı, .NET yükleyemiyordu. PNG formatına dönüştürüldü — hem görev çubuğu hem masaüstü kısayolu ikonu artık doğru görünür. Yeni kurulum yapan kullanıcılarda ikon hemen düzelir; oto-güncelleme yapanlarda pencere ikonu düzelir.
 - Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
+
+**Teknik**
 - Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
 - Hızlı ürün ekleme/düzenleme diyaloglarında fiyat hesaplaması kesinlik artırıldı (BigDecimal)
 - Kod kalitesi iyileştirmeleri: APPDATA yolu tek kaynaktan yönetiliyor, ölü kod temizlendi
@@ -42,8 +45,11 @@
 **Owner Screen**
 - "Last Connection" column added to market table — shows when each store last connected (Just now / N hours ago / N days ago / Never connected)
 
-**Technical**
+**Fixes**
+- **App icon fixed:** After the v2.3.2 update, the icon embedded in the exe was broken — Windows showed the default Java icon. Root cause: the ICO file was in legacy BMP format that .NET cannot load. Converted to PNG format — both taskbar and desktop shortcut icons now display correctly. Fresh installations from v2.3.3 ZIP fix the icon immediately; users updating via auto-update will see the correct window icon.
 - Receipt printing errors now shown as in-app notifications even when no printer is found
+
+**Technical**
 - CSS temp file is no longer recreated on every theme toggle (caching)
 - Improved price calculation precision in quick product add/edit dialogs (BigDecimal)
 - Code quality: AppData path now sourced from a single location; dead code removed
