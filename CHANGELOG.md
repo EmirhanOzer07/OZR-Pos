@@ -2,7 +2,7 @@
 
 ---
 
-## v2.3.3 — 2026-05-29
+## v2.3.3 — 2026-05-30
 
 ### TR — Değişiklikler
 
@@ -23,6 +23,8 @@
 **Teknik**
 - Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
 - Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
+- Hızlı ürün ekleme/düzenleme diyaloglarında fiyat hesaplaması kesinlik artırıldı (BigDecimal)
+- Kod kalitesi iyileştirmeleri: APPDATA yolu tek kaynaktan yönetiliyor, ölü kod temizlendi
 
 ### EN — Changes
 
@@ -43,6 +45,8 @@
 **Technical**
 - Receipt printing errors now shown as in-app notifications even when no printer is found
 - CSS temp file is no longer recreated on every theme toggle (caching)
+- Improved price calculation precision in quick product add/edit dialogs (BigDecimal)
+- Code quality: AppData path now sourced from a single location; dead code removed
 
 ---
 
