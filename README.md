@@ -4,13 +4,13 @@
 
 **Profesyonel Market Kasa Sistemi · Professional Point of Sale System**
 
-[![Son Surum](https://img.shields.io/github/v/release/EmirhanOzer07/OZR-Pos?label=son%20surum&color=0066cc&style=for-the-badge)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
+[![Son Sürüm](https://img.shields.io/github/v/release/EmirhanOzer07/OZR-Pos?label=son%20s%C3%BCr%C3%BCm&color=0066cc&style=for-the-badge)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
 [![Platform](https://img.shields.io/badge/Windows%2010%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
 [![Java](https://img.shields.io/badge/Java%2021-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
-[![Guvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#veri-guvenligi--data-security)
-[![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE)
+[![Güvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#-veri-güvenliği--data-security)
+[![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE.md)
 
-[**İndir / Download**](#kurulum) &nbsp;·&nbsp; [**Lisans Al / Get License**](#lisans-iletisim) &nbsp;·&nbsp; [**Yedek Rehberi / Backup Guide**](docs/YEDEK_REHBERI.md) &nbsp;·&nbsp; [**İletişim / Contact**](#lisans-iletisim)
+[**⬇ İndir / Download**](#-kurulum--installation) &nbsp;·&nbsp; [**🔑 Lisans Al / Get License**](#-lisans-ve-iletişim--license--contact) &nbsp;·&nbsp; [**💾 Yedek Rehberi / Backup Guide**](YEDEK_REHBERI.md) &nbsp;·&nbsp; [**📋 Değişiklikler / Changelog**](CHANGELOG.md)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 ---
 
-## Ekran Görüntüleri / Screenshots
+## 📸 Ekran Görüntüleri / Screenshots
 
 ### Kasa / Satış Ekranı
 ![Satış](docs/screenshots/satis.png)
@@ -49,7 +49,7 @@
 
 ---
 
-## Özellikler / Features
+## ✨ Özellikler / Features
 
 | | TR | EN |
 |---|---|---|
@@ -65,7 +65,7 @@
 
 ---
 
-## 15 Günlük Ücretsiz Demo / 15-Day Free Trial
+## 🎯 15 Günlük Ücretsiz Demo / 15-Day Free Trial
 
 ![Demo](docs/screenshots/demo.png)
 
@@ -75,9 +75,9 @@
 
 ---
 
-<a id="kurulum"></a>
+<a id="-kurulum--installation"></a>
 
-## Kurulum / Installation
+## 🚀 Kurulum / Installation
 
 **Gereksinimler / Requirements:** Windows 10/11 (64-bit) — Java kurulumu gerekmez / No Java required
 
@@ -105,9 +105,9 @@
 
 ---
 
-<a id="lisans-iletisim"></a>
+<a id="-lisans-ve-iletişim--license--contact"></a>
 
-## Lisans ve İletişim / License & Contact
+## 🔑 Lisans ve İletişim / License & Contact
 
 ### TR — Nasıl Lisans Alınır?
 
@@ -134,7 +134,7 @@
 
 ---
 
-## Sık Sorulan Sorular / FAQ
+## ❓ Sık Sorulan Sorular / FAQ
 
 <details>
 <summary><strong>İnternet bağlantısı şart mı? / Is internet required?</strong></summary>
@@ -167,11 +167,11 @@
 <details>
 <summary><strong>Bilgisayar bozulursa verilerimi kurtarabilir miyim? / What if my computer breaks?</strong></summary>
 
-**TR:** Evet — yedek aldıysanız. Detaylı kurtarma rehberi için: [**Yedek ve Kurtarma Rehberi**](docs/YEDEK_REHBERI.md)
+**TR:** Evet — yedek aldıysanız. Detaylı kurtarma rehberi için: [**💾 Yedek ve Kurtarma Rehberi**](YEDEK_REHBERI.md)
 
 Özet: Uygulama her gece otomatik yedek alır. Bu yedekleri Google Drive ile senkronize etmenizi öneririz. Bilgisayar değişirse lisans aktarımı için bizimle iletişime geçin — ücretsizdir.
 
-**EN:** Yes — if you have backups. See the full guide: [**Backup & Recovery Guide**](docs/YEDEK_REHBERI.md)
+**EN:** Yes — if you have backups. See the full guide: [**💾 Backup & Recovery Guide**](YEDEK_REHBERI.md)
 
 Summary: The app takes automatic backups every night. We recommend syncing them to Google Drive. If you change computers, contact us for a free license transfer.
 </details>
@@ -186,9 +186,9 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 ---
 
-<a id="veri-guvenligi--data-security"></a>
+<a id="-veri-güvenliği--data-security"></a>
 
-## Veri Güvenliği / Data Security
+## 🔐 Veri Güvenliği / Data Security
 
 | Katman / Layer | Uygulama / Implementation |
 |---|---|
@@ -203,7 +203,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 ---
 
-## Sürüm Geçmişi / Changelog
+## 📋 Sürüm Geçmişi / Changelog
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
@@ -211,14 +211,14 @@ Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
 ---
 
-## Lisans / License
+## 📄 Lisans / License
 
 Copyright © 2026 Mustafa Emirhan Özer. Tüm hakları saklıdır / All rights reserved.
 
 Bu yazılım tescilli mülkiyettir. İzinsiz kopyalama, dağıtım veya tersine mühendislik yasaktır.
 This software is proprietary. Unauthorized copying, distribution, or reverse engineering is prohibited.
 
-Tam koşullar için / For full terms: [LICENSE](LICENSE)
+Tam koşullar için / For full terms: [LICENSE.md](LICENSE.md)
 
 ---
 

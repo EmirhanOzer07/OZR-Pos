@@ -1,29 +1,30 @@
 ---
 name: Hata Bildirimi / Bug Report
-about: Uygulamada beklenmedik bir sorun mu yasiyorsunuz? Bildirin.
+about: Uygulamada beklenmedik bir sorun mu yaşıyorsunuz? Bildirin.
 title: '[BUG] '
 labels: bug
 assignees: EmirhanOzer07
 ---
 
-## Sorun Nedir?
-Ne oldugunu kisaca aciklayin.
+## Sorun Nedir? / What Is the Issue?
+Ne olduğunu kısaca açıklayın. / Briefly describe what happened.
 
-## Ne Yapiyordunuz?
-Hatadan once hangi adimlari izlediniz?
+## Adımlar / Steps to Reproduce
+Hatadan önce hangi adımları izlediniz? / What did you do before the error?
 1. 
 2. 
 3. 
 
-## Ne Olmasini Bekliyordunuz?
+## Beklenen Davranış / Expected Behavior
+Ne olmasını bekliyordunuz? / What did you expect to happen?
 
-## Bilgiler
-- **OZR POS Surum:** (Giris ekraninda alt kosede yazar — or. v2.2.2)
-- **Windows Surum:** (or. Windows 11)
+## Sistem Bilgileri / System Info
+- **OZR POS Sürüm / Version:** (Giriş ekranında sol üstte yazar — ör. v2.3.3)
+- **Windows Sürüm / Windows Version:** (ör. Windows 11 22H2)
 
-## Ekran Goruntusu veya Hata Mesaji
-Varsa buraya ekleyin.
+## Ekran Görüntüsü veya Hata Mesajı / Screenshot or Error Message
+Varsa buraya ekleyin. / Attach if available.
 
 ---
-> **Daha hizli yanit icin:** emirhann0077@gmail.com adresine e-posta gonderebilirsiniz.
-> Genellikle 24 saat icinde yanitlanmaktadir.
+> **Daha hızlı yanıt için / For faster response:** emirhann0077@gmail.com
+> Genellikle 24 saat içinde yanıtlanır. / Usually answered within 24 hours.
