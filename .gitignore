@@ -20,3 +20,6 @@ patron.cfg
 
 # Claude Code
 .claude/
+
+# Oturum dışa aktarma dosyaları (özel, public repoya girmemeli)
+*.txt
