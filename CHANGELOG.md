@@ -2,7 +2,7 @@
 
 ---
 
-## v2.3.3 — 2026-05-30
+## v2.3.3 — 2026-06-02
 
 ### TR — Değişiklikler
 
@@ -12,22 +12,33 @@
 - Hızlı ürün tuşlarına sağ tık menüsü eklendi: isim/fiyat düzenleme ve tuşu kaldırma
 - Bulunamayan barkodlar listesine zaman damgası eklendi; liste uygulama yeniden başlatılsa bile korunur
 - Ağ durumu göstergesi: ürün önbelleği yüklenirken bağlantı başarısız olursa kırmızı uyarı
+- **Uzun süreli oturum kararlılığı:** Gece açık kalan marketlerde lisans yenilendikten sonra barkod okutulunca "Erişim Engellendi" hatası oluşabiliyordu; giderildi
 
 **Yönetim Ekranı**
 - Rapor sekmesine "Tüm Zamanlar" butonu eklendi — tüm geçmişi tek tıkla görüntüleme
 - Ciro sekmesi kaldırıldı (rapor sekmesi tüm ihtiyacı karşılıyor)
+- **Fiyat düzenleme:** Negatif fiyat girişi artık engelleniyor (önceden backend 400 dönse de ekranda "✓ Güncellendi" görünüyordu)
+- **Kasiyer ekleme:** Aynı kullanıcı adı eklenmeye çalışıldığında hata mesajı artık ekranda görünüyor (önceden boş görünüyordu)
 
 **Patron Ekranı**
 - Market tablosuna "Son Bağlantı" sütunu eklendi — her marketin en son ne zaman aktif olduğu görülebiliyor (Az önce / N saat önce / N gün önce / Hiç bağlanmadı)
+- Son Bağlantı sütununda saat farkı artık doğru hesaplanıyor (UTC düzeltmesi)
+- Geçmiş tarihle lisans uzatma artık engelleniyor
+- Market aktif/deaktif değiştirme işleminin sonucu artık doğru bildiriliyor
 
 **Düzeltmeler**
+- **Şifre değiştirme:** Yeni şifrenin sonunda boşluk olduğunda kullanıcı kendi hesabına giremez hale geliyordu; giderildi
 - **Uygulama simgesi düzeltildi:** v2.3.2 güncellemesiyle birlikte exe içine gömülen ikon bozulmuştu; Windows varsayılan ikonu görünüyordu. Kök neden: ICO dosyası eski BMP formatındaydı, .NET yükleyemiyordu. PNG formatına dönüştürüldü — hem görev çubuğu hem masaüstü kısayolu ikonu artık doğru görünür. Yeni kurulum yapan kullanıcılarda ikon hemen düzelir; oto-güncelleme yapanlarda pencere ikonu düzelir.
 - Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
 
 **Teknik**
+- Uygulama kapatılırken gereksiz lisans sunucusu isteği kaldırıldı — bağlantı hatası oluşmuyordu ama gereksiz gecikme yaratıyordu
+- Lisans sunucusuna bağlantı hataları (429, 500 vb.) artık tutarlı şekilde işleniyor
+- Lisans bitiş tarihi her girişte otomatik güncelleniyor — uzun vadede "Erişim Engellendi" riski giderildi
 - Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
 - Hızlı ürün ekleme/düzenleme diyaloglarında fiyat hesaplaması kesinlik artırıldı (BigDecimal)
 - Kod kalitesi iyileştirmeleri: APPDATA yolu tek kaynaktan yönetiliyor, ölü kod temizlendi
+- Test sayısı: 122
 
 ### EN — Changes
 
@@ -37,22 +48,33 @@
 - Right-click menu on quick product buttons: edit name/price or remove the button
 - Not-found barcode list now shows timestamps; list persists across app restarts
 - Network indicator: turns red if product cache fails to load on startup
+- **Long-session stability:** Fixed "Access Denied" errors that could occur on barcode scan after a license renewal while the app was left open overnight
 
 **Management Screen**
 - "All Time" button added to the Report tab — view full history with one click
 - Revenue tab removed (the Report tab covers all use cases)
+- **Price editing:** Negative price entry is now blocked (previously the backend rejected it with 400 but the screen showed "✓ Updated")
+- **Add cashier:** Duplicate username error message is now displayed correctly (was blank before)
 
 **Owner Screen**
 - "Last Connection" column added to market table — shows when each store last connected (Just now / N hours ago / N days ago / Never connected)
+- Last Connection time difference now calculated correctly (UTC fix)
+- Setting a past date for license renewal is now blocked
+- Active/deactivate market result is now reported correctly
 
 **Fixes**
+- **Password change:** A trailing space in the new password caused the user to be locked out of their account; fixed
 - **App icon fixed:** After the v2.3.2 update, the icon embedded in the exe was broken — Windows showed the default Java icon. Root cause: the ICO file was in legacy BMP format that .NET cannot load. Converted to PNG format — both taskbar and desktop shortcut icons now display correctly. Fresh installations from v2.3.3 ZIP fix the icon immediately; users updating via auto-update will see the correct window icon.
 - Receipt printing errors now shown as in-app notifications even when no printer is found
 
 **Technical**
+- Removed unnecessary license server call on app exit
+- License server connection errors (429, 500, etc.) now handled consistently
+- License expiry date now auto-synced on every login — eliminates long-term "Access Denied" risk
 - CSS temp file is no longer recreated on every theme toggle (caching)
 - Improved price calculation precision in quick product add/edit dialogs (BigDecimal)
 - Code quality: AppData path now sourced from a single location; dead code removed
+- Test count: 122
 
 ---
 
