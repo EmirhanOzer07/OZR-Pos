@@ -27,7 +27,8 @@
 - Market aktif/deaktif değiştirme işleminin sonucu artık doğru bildiriliyor
 
 **Düzeltmeler**
-- **Şifre değiştirme:** Yeni şifrenin sonunda boşluk olduğunda kullanıcı kendi hesabına giremez hale geliyordu; giderildi
+- **Şifre değiştirme (yeni şifre):** Yeni şifrenin sonunda boşluk olduğunda kullanıcı kendi hesabına giremez hale geliyordu; giderildi
+- **Şifre değiştirme (mevcut şifre alanı):** Giriş ekranı mevcut şifreyi boşluklu yazınca kabul ederken şifre değiştirme ekranındaki "mevcut şifre" alanı aynı şifreyi reddediyordu; davranış tutarlı hale getirildi
 - **Uygulama simgesi düzeltildi:** v2.3.2 güncellemesiyle birlikte exe içine gömülen ikon bozulmuştu; Windows varsayılan ikonu görünüyordu. Kök neden: ICO dosyası eski BMP formatındaydı, .NET yükleyemiyordu. PNG formatına dönüştürüldü — hem görev çubuğu hem masaüstü kısayolu ikonu artık doğru görünür. Yeni kurulum yapan kullanıcılarda ikon hemen düzelir; oto-güncelleme yapanlarda pencere ikonu düzelir.
 - Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
 
@@ -38,7 +39,7 @@
 - Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
 - Hızlı ürün ekleme/düzenleme diyaloglarında fiyat hesaplaması kesinlik artırıldı (BigDecimal)
 - Kod kalitesi iyileştirmeleri: APPDATA yolu tek kaynaktan yönetiliyor, ölü kod temizlendi
-- Test sayısı: 122
+- Test sayısı: 123
 
 ### EN — Changes
 
@@ -63,7 +64,8 @@
 - Active/deactivate market result is now reported correctly
 
 **Fixes**
-- **Password change:** A trailing space in the new password caused the user to be locked out of their account; fixed
+- **Password change (new password):** A trailing space in the new password caused the user to be locked out of their account; fixed
+- **Password change (current password field):** The login screen accepted the current password with trailing spaces, but the "current password" field in the change dialog rejected it; behavior is now consistent
 - **App icon fixed:** After the v2.3.2 update, the icon embedded in the exe was broken — Windows showed the default Java icon. Root cause: the ICO file was in legacy BMP format that .NET cannot load. Converted to PNG format — both taskbar and desktop shortcut icons now display correctly. Fresh installations from v2.3.3 ZIP fix the icon immediately; users updating via auto-update will see the correct window icon.
 - Receipt printing errors now shown as in-app notifications even when no printer is found
 
@@ -74,7 +76,7 @@
 - CSS temp file is no longer recreated on every theme toggle (caching)
 - Improved price calculation precision in quick product add/edit dialogs (BigDecimal)
 - Code quality: AppData path now sourced from a single location; dead code removed
-- Test count: 122
+- Test count: 123
 
 ---
 
