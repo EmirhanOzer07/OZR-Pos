@@ -2,6 +2,24 @@
 
 ---
 
+## v2.3.5 — 2026-06-03
+
+### TR — Değişiklikler
+
+**Yönetim Ekranı — Ürün Ekleme**
+- **Çift gönderim koruması:** "Ekle" tuşuna veya Enter'a iki kez basılınca aynı ürün iki kez gönderiliyordu; ilk istek başarıyla kaydedilip ikincisi hata verdiği için kullanıcı "ürün eklenemedi" görüyordu. API yanıtı gelene kadar alanlar artık kilitlenir.
+- **Anlamlı hata mesajı:** Aynı barkod tekrar eklenmeye çalışılınca "Ürün eklenemedi!" yerine artık "Bu barkod bu markette zaten kayıtlı!" mesajı görünür.
+- **Hata tespiti:** Backend'den gelen hata yanıtları artık kullanıcıya doğru şekilde iletilir; önceden 400 yanıtında yanlışlıkla "✓ Eklendi" gösteriliyordu.
+
+### EN — Changes
+
+**Management Screen — Product Add**
+- **Double-submit protection:** Pressing "Add" or Enter twice sent the same product twice — the first request saved successfully while the second returned an error, causing the user to see "product could not be added". Fields are now locked until the API responds.
+- **Meaningful error message:** Attempting to add a duplicate barcode now shows "This barcode is already registered in this store!" instead of the generic "Product could not be added!"
+- **Error detection:** Backend error responses are now correctly shown to the user; previously a 400 response incorrectly displayed "✓ Added".
+
+---
+
 ## v2.3.4 — 2026-06-03
 
 ### TR — Değişiklikler
