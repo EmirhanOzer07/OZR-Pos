@@ -58,8 +58,8 @@
 | 👥 Personel | ADMIN ve KASİYER rolleri, şifre değiştirme | ADMIN and CASHIER roles, password management |
 | 📊 Raporlar | Günlük/dönemsel ciro, nakit-kart ayrımı | Daily/periodic revenue, cash-card breakdown |
 | 💾 Yedekleme | Her açılışta otomatik SQL yedeği + gece Excel listesi | Auto SQL backup on launch + nightly Excel export |
-| ♻️ Geri Yükleme | Son 30 yedekten tek tıkla geri dönüş | One-click restore from last 30 backups |
-| 🔄 Güncelleme | Yeni sürümler arka planda indirilir, elle müdahale gerekmez | Updates download silently in the background |
+| ♻️ Geri Yükleme | Günlük ve işlem yedeklerinden tek tıkla geri dönüş | One-click restore from daily and per-operation backups |
+| 🔄 Güncelleme | Yeni sürüm bildirimi gelir, tek onayla indirilip uygulanır | Update notification appears; one click downloads and applies it |
 | 🌙 Tema | Karanlık / Aydınlık tema | Dark / Light theme |
 | 🔒 Güvenlik | AES-256 şifreleme, JWT kimlik doğrulama | AES-256 encryption, JWT authentication |
 
@@ -111,7 +111,7 @@
 
 ### TR — Nasıl Lisans Alınır?
 
-1. Uygulamayı kurun ve açın — 15 günlük ücretsiz demo otomatik başlar
+1. Uygulamayı kurun ve açın — ilk açılışta **"Demo Başlat"** ile 15 günlük ücretsiz demoyu başlatın
 2. Lisans satın almak için aşağıdaki adrese e-posta gönderin
 3. Tarafınıza 8 karakterlik **davetiye kodu** iletilir
 4. Kodu uygulamanın kayıt ekranına girin → marketiniz aktive edilir
@@ -120,7 +120,7 @@
 
 ### EN — How to Get a License
 
-1. Install and open the application — 15-day free demo starts automatically
+1. Install and open the application — click **"Start Demo"** on first launch for the 15-day free trial
 2. Send an email to the address below to purchase a license
 3. You will receive an 8-character **invitation code**
 4. Enter the code on the app's registration screen → your store is activated
@@ -147,9 +147,9 @@
 <details>
 <summary><strong>Verilerim nerede saklanıyor? / Where is my data stored?</strong></summary>
 
-**TR:** Tüm veriler AES-256 şifreli olarak kendi bilgisayarınızda saklanır. Hiçbir veri dışarıya gönderilmez.
+**TR:** Tüm veriler şifrelenmiş olarak kendi bilgisayarınızda saklanır (veritabanı AES, yedekler AES-256). Hiçbir veri dışarıya gönderilmez.
 
-**EN:** All data is stored locally on your computer with AES-256 encryption. Nothing is sent to external servers.
+**EN:** All data is stored locally on your computer, encrypted (AES database, AES-256 backups). Nothing is sent to external servers.
 </details>
 
 <details>
@@ -192,9 +192,10 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 | Katman / Layer | Uygulama / Implementation |
 |---|---|
-| Veritabanı / Database | AES-256 şifreleme, kuruluma özel anahtar / AES-256 encryption, per-install key |
+| Veritabanı / Database | AES şifreli H2, kuruluma özel anahtar / AES-encrypted H2, per-install key |
+| Yedekler / Backups | AES-256/GCM şifreli yedek dosyaları / AES-256/GCM encrypted backup files |
 | Kimlik Doğrulama / Auth | JWT (HMAC-SHA256) + BCrypt |
-| Hız Sınırı / Rate Limit | IP başına 10 istek/dk / 10 req/min per IP |
+| Hız Sınırı / Rate Limit | Giriş denemelerinde IP başına 10 istek/dk / 10 login attempts/min per IP |
 | Yetkilendirme / Authorization | Role tabanlı erişim kontrolü / Role-based access control |
 
 > **TR:** Tüm şifreleme anahtarları kurulum sırasında üretilir ve yalnızca sizin makinenizde saklanır. OZR POS, işletme verilerinizi hiçbir sunucuya iletmez.
