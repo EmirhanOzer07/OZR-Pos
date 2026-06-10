@@ -33,6 +33,19 @@ C:\Users\[KullanıcıAdınız]\AppData\Local\MarketPOS\yedek\
 
 ---
 
+### ⚠️ Önemli: Yedek Dosyaları Windows'ta Açılmaz — Bu Normaldir
+
+`gunluk\` ve `islem\` klasörlerindeki `.zip` dosyalarına çift tıklarsanız Windows
+**"Sıkıştırılmış klasör geçersiz"** der. Bu bir hata DEĞİLDİR:
+
+- Yedekleriniz market verinizi (satışlar, ürünler, personel) içerdiği için **AES-256 ile şifrelenir**. Windows şifreli dosyayı açamaz — açabilseydi, dosyayı ele geçiren herkes de açabilirdi.
+- Yedekler **yalnızca uygulama içinden** geri yüklenir: Yönetim Ekranı → Yedekler sekmesi. Uygulama şifreyi otomatik çözer.
+- Yedeklerin sağlıklı olduğunu dosyayı açarak değil, **tarihine ve boyutuna** bakarak doğrulayın (güncel tarihli ve 0 KB'tan büyük olmalı).
+
+> `yedek` klasörünün kökünde `veri_...zip` adında eski dosyalar görebilirsiniz — bunlar eski sürümlerden kalan şifresiz yedeklerdir, Windows açabilir ama uygulama artık bunları geri yüklemez. Güncel yedekleriniz `gunluk\` ve `islem\` klasörlerindekilerdir.
+
+---
+
 ### Google Drive ile Otomatik Yedek (Önerilen)
 
 **Neden Google Drive?** Bilgisayar tamamen bozulsa bile verileriniz bulutta güvende olur.
@@ -81,7 +94,7 @@ Google Drive'a gerek yoktur.
 
 Bu senaryoda veritabanı sıfırdan başlar. Bu yüzden önceki yedeği **uygulamayı açmadan önce** geri yüklemek gerekir. Adımları sırayla ve eksiksiz takip edin.
 
-**Bu adımları kendiniz yapamıyorsanız doğrudan [Adım 6](#senaryo-b-iletisim)'ya geçin.**
+**Bu adımları kendiniz yapamıyorsanız adımların sonundaki [iletişim bölümüne](#senaryo-b-iletisim) geçin — uzaktan bağlanıp sizin yerinize yapabiliriz.**
 
 ---
 
@@ -142,7 +155,7 @@ Bu klasörde `gunluk_TARIH.zip` formatında dosyalar olmalıdır. En son tarihli
 
 **Adım 5 — Uygulamayı çalıştırın**
 
-Uygulamayı açın. Uygulama `pending_restore.flag` dosyasını otomatik olarak algılayacak ve yedeği geri yükleyecektir. Bu süreçte herhangi bir şey yapmanıza gerek yoktur — uygulama bir kez kapanıp yeniden açılır.
+Uygulamayı açın. Uygulama `pending_restore.flag` dosyasını açılış sırasında otomatik algılar ve yedeği geri yükler. Bu süreçte herhangi bir şey yapmanıza gerek yoktur; açılış normalden biraz uzun sürebilir, uygulama doğrudan giriş ekranıyla açılır.
 
 ---
 
@@ -163,11 +176,12 @@ Eski patron hesabınızla giriş yapın. Tüm verileriniz (ürünler, satışlar
 
 #### Senaryo C: Yeni bilgisayar aldınız 📞 Geliştirici Gerekli
 
-Lisansınız mevcut bilgisayara özeldir. Yeni bilgisayarda **önce bizimle iletişime geçin.**
+Yeni bilgisayara geçişte **önce bizimle iletişime geçin.**
 
 1. **emirhann0077@gmail.com** adresine yazın, lisans aktarımı talep edin
-2. Kısa süre içinde yeni bilgisayarınız için aktivasyon bilgisi iletilir
-3. Aktivasyon tamamlandıktan sonra **Senaryo B'deki adımları** izleyin
+2. Size yeni bir **aktivasyon (davetiye) kodu** iletilir
+3. **Senaryo B'deki adımları** izleyin — tek farkla: Adım 2'de `market-key.bak` dosyasını **KOPYALAMAYIN** (eski bilgisayarın lisans kaydıdır; kopyalanırsa "Erişim Engellendi" ekranı görürsünüz). Yalnızca `dbkey.bak → .dbkey` ve `config.bak → config.properties` kopyalanacak.
+4. Uygulama verileri geri yükledikten sonra açılışta lisans aktivasyon ekranı çıkar — size iletilen davetiye kodunu ve market adınızı girin
 
 Lisans aktarımı **ücretsizdir.**
 
@@ -180,8 +194,8 @@ Uygulama çalışıyor ve giriş yapabiliyorsunuz.
 1. **Yönetim Ekranı → Yedekler sekmesi**
 2. Listeden geri dönmek istediğiniz tarihe ait yedeği seçin
 3. **Geri Yükle** butonuna tıklayın
-4. Çift onay ekranını geçin — uygulama otomatik kapanıp açılır
-5. Seçtiğiniz tarihteki verilerle devam eder
+4. Çift onay ekranını geçin — uygulama kendini kapatır
+5. **Uygulamayı yeniden açın** — açılışta yedek otomatik yüklenir, seçtiğiniz tarihteki verilerle devam edersiniz
 
 > Yedekler listesi boşsa `yedek\gunluk\` klasörünü kontrol edin; ZIP dosyaları orada olmalı.
 
@@ -192,9 +206,11 @@ Uygulama çalışıyor ve giriş yapabiliyorsunuz.
 Ayda bir şu kontrolleri yapın:
 
 - [ ] Google Drive'da `yedek` klasörü güncel mi? (Son 7 günde en az 1 ZIP görünmeli)
-- [ ] `yedek\gunluk\` klasöründe ZIP dosyaları var mı?
+- [ ] `yedek\gunluk\` klasöründe güncel tarihli, 0 KB'tan büyük ZIP dosyaları var mı?
 - [ ] `yedek\dbkey.bak` dosyası mevcut mu?
 - [ ] Patron hesabı şifrenizi hatırlıyor musunuz?
+
+> ZIP dosyalarını çift tıklayıp açmayı **denemeyin** — şifreli oldukları için Windows "geçersiz" der, bu normaldir (yukarıdaki bölüme bakın).
 
 ---
 
@@ -261,6 +277,18 @@ C:\Users\[YourUsername]\AppData\Local\MarketPOS\yedek\
 ```
 
 > `AppData` is a hidden folder. To view it: File Explorer → View → Show hidden items.
+
+---
+
+### ⚠️ Important: Backup Files Won't Open in Windows — This Is Normal
+
+If you double-click the `.zip` files in `gunluk\` or `islem\`, Windows says **"The compressed folder is invalid"**. This is NOT an error:
+
+- Backups contain your business data, so they are **encrypted with AES-256**. Windows cannot open an encrypted file — if it could, so could anyone who copied it.
+- Backups can only be restored **from inside the app**: Management Screen → Backups tab. The app decrypts them automatically.
+- To verify a backup is healthy, check its **date and size** (recent date, larger than 0 KB) — do not try to open it.
+
+> You may see older `veri_...zip` files in the root of the `yedek` folder — these are unencrypted backups from older versions; Windows can open them but the app no longer restores them. Your current backups are the ones in `gunluk\` and `islem\`.
 
 ---
 
@@ -333,7 +361,7 @@ C:\Users\[YourUsername]\AppData\Local\MarketPOS\yedek\gunluk\
 
 **Step 5 — Launch the app**
 
-Open the app. It will detect the flag file and **automatically restore your database**. The app will close and reopen once — this is normal.
+Open the app. It will detect the flag file during startup and **automatically restore your database**. Startup may take a little longer than usual; the app then opens directly to the login screen.
 
 **Step 6 — Log in**
 
@@ -349,11 +377,12 @@ Log in with your patron account credentials. All your data will be restored.
 
 #### Scenario C: New computer 📞 Developer Required
 
-Your license is tied to your current computer. **Contact us first.**
+When moving to a new computer, **contact us first.**
 
 1. Email **emirhann0077@gmail.com** to request a license transfer
-2. We will provide activation details for your new computer
-3. Then follow **Scenario B** above
+2. We will provide a new **activation (invitation) code**
+3. Follow **Scenario B** above with one difference: in Step 2, do **NOT** copy `market-key.bak` (it is the old computer's license record; copying it shows an "Access Denied" screen). Copy only `dbkey.bak → .dbkey` and `config.bak → config.properties`.
+4. After the data is restored, the app shows a license activation screen on startup — enter the invitation code and your store name
 
 License transfer is **free of charge.**
 
@@ -366,18 +395,20 @@ The app is running and you can log in.
 1. **Management Screen → Backups tab**
 2. Select the backup from the date you want to restore
 3. Click **Restore**
-4. Confirm twice — the app restarts automatically
-5. Your data from the selected date is restored
+4. Confirm twice — the app closes itself
+5. **Reopen the app** — the backup is applied during startup and your data from the selected date is restored
 
 ---
 
 ### Monthly Health Check
 
 - [ ] Is the Drive `yedek` folder up to date? (At least 1 ZIP from the last 7 days)
-- [ ] Are ZIP files present in `yedek\gunluk\`?
+- [ ] Are recent ZIP files (larger than 0 KB) present in `yedek\gunluk\`?
 - [ ] Does `yedek\dbkey.bak` exist?
 - [ ] Do you remember your patron account password?
 
+> Do **not** try to open the ZIP files by double-clicking — they are encrypted, so Windows reports them as "invalid". This is normal (see the section above).
+
 ---
 
-*Son güncelleme / Last updated: 2026-06-01*
+*Son güncelleme / Last updated: 2026-06-10*
