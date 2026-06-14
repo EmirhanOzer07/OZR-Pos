@@ -53,7 +53,7 @@
 
 | | TR | EN |
 |---|---|---|
-| 🛒 Kasa | Barkod okuyucu, sepet yönetimi, nakit/kart ödeme, klavye kısayolları | Barcode scanner, cart, cash/card payment, keyboard shortcuts |
+| 🛒 Kasa | Barkod okuyucu, **çoklu sepet (3 kasa — aynı anda 3 müşteri)**, nakit/kart ödeme, klavye kısayolları | Barcode scanner, **multiple parked carts (3 registers)**, cash/card payment, keyboard shortcuts |
 | 📦 Ürünler | Tekil ekleme veya CSV ile 10.000+ ürün yükleme | Single add or bulk CSV upload (10,000+ products) |
 | 👥 Personel | ADMIN ve KASİYER rolleri, şifre değiştirme | ADMIN and CASHIER roles, password management |
 | 📊 Raporlar | Günlük/dönemsel ciro, nakit-kart ayrımı | Daily/periodic revenue, cash-card breakdown |
@@ -208,7 +208,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.3.5 — Ürün ekleme hatası giderildi (çift gönderim koruması, anlamlı hata mesajları)
+**Son sürüm / Latest:** v2.3.6 — Çoklu sepet (aynı anda 3 müşteri), uzun oturum kararlılığı, barkod/Enter iyileştirmeleri / Multiple parked carts, long-session stability, barcode/Enter improvements
 
 ---
 

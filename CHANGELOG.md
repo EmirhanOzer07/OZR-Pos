@@ -2,6 +2,54 @@
 
 ---
 
+## v2.3.6 — 2026-06-14
+
+### TR — Değişiklikler
+
+**Kasa Ekranı**
+- **Çoklu sepet (Kasa 1 / 2 / 3):** Aynı anda 3 müşterinin sepetini ayrı tutabilirsiniz. Biri ödeme beklerken diğerinin ürünlerini okutmaya başlayın; `Ctrl+1/2/3` ile kasalar arasında geçin. Sepetler, ürünler ve indirimler birbirinden bağımsızdır; hızlı ürünler ve katalog tüm kasalarda ortaktır.
+- **Barkod / Enter düzeltmesi:** Geçersiz barkod sonrası çıkan hata bildirimi, bir sonraki okutmanın Enter'ını yutuyordu; bu yüzden ürünü eklemek için elle Enter'a basmak gerekiyordu. Giderildi — okutma artık kesintisiz devam eder.
+- **Nakit ödemede hızlı tam para:** Müşteri tam para verdiyse `F5`–`F5` ile fare/klavyeye dokunmadan satışı kapatın (fişe doğru tutar yazılır).
+- **Sepeti temizleme:** `Esc` sonrası açılan onayda `Enter` doğrudan onaylar; iptal için Vazgeç veya tekrar `Esc`.
+
+**Uzun Oturum / Kararlılık**
+- **24 saat sorunu giderildi:** Günlerce kapatılmayan kasalarda oturum süresi dolunca "Erişim Engellendi" / ürünler görünmüyor durumu oluşabiliyordu (yeniden başlatma gerekiyordu). Artık net "Oturum süresi doldu — yeniden giriş yapın" uyarısı gelir, giriş sonrası kaldığınız yerden devam edersiniz.
+- **Oturum süresi 24 saatten 3 güne çıkarıldı** — çok daha seyrek yeniden giriş.
+
+**Personel**
+- **Yeniden işe alım:** Silinen bir kasiyer, aynı kullanıcı adıyla tekrar eklenebilir (eskiden "bu kullanıcı adı zaten alınmış" hatası veriyordu). Geçmiş satış kayıtları korunur.
+
+**Yedekleme**
+- **Excel yedeği saatlik bekçi:** Bilgisayar gece uyku moduna girse bile günlük Excel ürün listesi yedeği garanti altına alındı.
+- **Geri yükleme güvenliği:** Geri yükleme sırasında yarım kalma (örn. elektrik kesintisi) ve disk sorunlarına karşı orijinal veriyi koruyan ek güvenceler eklendi.
+
+**Teknik**
+- Test sayısı: 152
+
+### EN — Changes
+
+**Sales Screen**
+- **Multiple parked carts (Register 1 / 2 / 3):** Hold up to three customers' carts at once. Start scanning a second customer's items while the first waits to pay; switch with `Ctrl+1/2/3`. Carts, products and discounts are independent; quick-product buttons and the catalog are shared across all registers.
+- **Barcode / Enter fix:** After scanning an invalid barcode, the error notification consumed the next scan's trailing Enter, forcing a manual Enter to add the product. Fixed — scanning now continues uninterrupted.
+- **Fast exact-cash:** When the customer pays the exact amount, press `F5`–`F5` to complete the sale without touching the mouse/keyboard (the receipt records the correct amount).
+- **Clear cart:** On the `Esc` confirmation, `Enter` confirms directly; cancel with Cancel or `Esc` again.
+
+**Long Session / Stability**
+- **24-hour issue fixed:** On registers left open for days, an expired session could cause "Access Denied" / products not showing (a restart was required). Now a clear "Session expired — please log in again" prompt appears, and you continue where you left off after logging in.
+- **Session lifetime raised from 24 hours to 3 days** — far less frequent re-login.
+
+**Staff**
+- **Re-hire:** A deleted cashier can be re-added with the same username (previously it errored "username already taken"). Past sales records are preserved.
+
+**Backups**
+- **Hourly watchman for Excel backup:** The daily Excel product-list backup is now guaranteed even if the computer sleeps overnight.
+- **Restore safety:** Added safeguards that protect the original data against interrupted restores (e.g., power loss) and disk issues.
+
+**Technical**
+- Test count: 152
+
+---
+
 ## v2.3.5 — 2026-06-03
 
 ### TR — Değişiklikler
