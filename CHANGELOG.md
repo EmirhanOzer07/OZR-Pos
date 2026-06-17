@@ -2,7 +2,7 @@
 
 ---
 
-## v2.3.6 — 2026-06-14
+## v2.3.6 — 2026-06-17
 
 ### TR — Değişiklikler
 
@@ -14,17 +14,21 @@
 
 **Uzun Oturum / Kararlılık**
 - **24 saat sorunu giderildi:** Günlerce kapatılmayan kasalarda oturum süresi dolunca "Erişim Engellendi" / ürünler görünmüyor durumu oluşabiliyordu (yeniden başlatma gerekiyordu). Artık net "Oturum süresi doldu — yeniden giriş yapın" uyarısı gelir, giriş sonrası kaldığınız yerden devam edersiniz.
+- **Proaktif uyarı her ekranda:** Kasa gibi Yönetim panelinde de, siz hiçbir işlem yapmasanız bile oturum süresi dolunca otomatik uyarı gelir (eskiden yalnız bir işlem yapınca fark ediliyordu).
 - **Oturum süresi 24 saatten 3 güne çıkarıldı** — çok daha seyrek yeniden giriş.
 
 **Personel**
 - **Yeniden işe alım:** Silinen bir kasiyer, aynı kullanıcı adıyla tekrar eklenebilir (eskiden "bu kullanıcı adı zaten alınmış" hatası veriyordu). Geçmiş satış kayıtları korunur.
 
 **Yedekleme**
-- **Excel yedeği saatlik bekçi:** Bilgisayar gece uyku moduna girse bile günlük Excel ürün listesi yedeği garanti altına alındı.
+- **Uyku sonrası yedek telafisi:** Bilgisayar günlerce uyku modunda kalsa bile, uygulama açık kaldığı sürece günlük yedek ve Excel ürün listesi yedeği otomatik tamamlanır — yeniden başlatmaya gerek kalmadan.
 - **Geri yükleme güvenliği:** Geri yükleme sırasında yarım kalma (örn. elektrik kesintisi) ve disk sorunlarına karşı orijinal veriyi koruyan ek güvenceler eklendi.
 
+**Yazıcı**
+- **Test fişi durumu net bildiriliyor:** Yazıcı seçili/bağlı değilse artık açık uyarı verir (eskiden her durumda "gönderildi" diyordu).
+
 **Teknik**
-- Test sayısı: 152
+- Test sayısı: 157
 
 ### EN — Changes
 
@@ -36,17 +40,21 @@
 
 **Long Session / Stability**
 - **24-hour issue fixed:** On registers left open for days, an expired session could cause "Access Denied" / products not showing (a restart was required). Now a clear "Session expired — please log in again" prompt appears, and you continue where you left off after logging in.
+- **Proactive prompt on every screen:** Like the sales screen, the Admin panel now also shows the session-expired prompt automatically even if you take no action (previously it surfaced only when you performed an operation).
 - **Session lifetime raised from 24 hours to 3 days** — far less frequent re-login.
 
 **Staff**
 - **Re-hire:** A deleted cashier can be re-added with the same username (previously it errored "username already taken"). Past sales records are preserved.
 
 **Backups**
-- **Hourly watchman for Excel backup:** The daily Excel product-list backup is now guaranteed even if the computer sleeps overnight.
+- **Post-sleep backup catch-up:** Even if the computer stays asleep for days, the daily backup and the Excel product-list backup are completed automatically while the app is open — no restart required.
 - **Restore safety:** Added safeguards that protect the original data against interrupted restores (e.g., power loss) and disk issues.
 
+**Printer**
+- **Clear test-receipt status:** If no printer is selected/connected, a clear warning is now shown (previously it always said "sent").
+
 **Technical**
-- Test count: 152
+- Test count: 157
 
 ---
 
