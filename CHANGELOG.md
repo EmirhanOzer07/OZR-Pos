@@ -2,6 +2,46 @@
 
 ---
 
+## v2.3.7 — 2026-07-09
+
+### TR — Değişiklikler
+
+**Yönetim Ekranı**
+- **Ürün ve kasiyer ekleme/düzenleme ekranları yenilendi:** Daha net ve ferah bir tasarım. Barkodu okutup Enter'a bastıkça sıradaki alana geçersiniz (`↑`/`↓` ile de gezinilir). Hatalar artık pencerenin içinde net görünür.
+- **Ürünler sekmesi düzeni iyileştirildi:** Ürün ekleme ile listede arama görsel olarak ayrıldı; arama kutusu artık tabloya bitişik bir "filtre" gibi durur, "buraya barkod yazıp ekleme yapılır mı?" karışıklığı giderildi.
+
+**Kasa Ekranı**
+- **Hızlı ürünler artık tam görünür:** İkiden fazla hızlı ürün de erişilebilir — hepsi `F4` veya "⤢ Tümü" penceresinde. Ürünleri **sürükleyip bırakarak** istediğiniz sıraya dizebilirsiniz.
+- **Başlıkta market adınız ve logonuz:** Sol üstte marketinizin adı görünür. Adı istediğiniz zaman **Yönetim → Yazıcı → "Market Adı"** alanından değiştirebilirsiniz.
+- **Satır silme (`Del`) düzeltildi:** Seçili satırı, seçim yoksa son satırı siler; barkod alanı yazımdayken de çalışır.
+
+**Giriş**
+- **"Beni hatırla" seçeneği:** Kapalıyken giriş bilgileriniz (şifre dahil) saklanmaz — paylaşımlı kasalarda güvenlik için.
+
+**Yedekleme & Kararlılık**
+- Yedekler **günde bir kez** alınır (bazı durumlarda günde iki kez alınması düzeltildi).
+- Nadiren görülen **"erişim engellendi"** durumu (lisans önbelleği bozulması) giderildi; genel kararlılık ve güvenlik iyileştirmeleri.
+
+### EN — Changes
+
+**Management Screen**
+- **Product & cashier add/edit screens redesigned:** A cleaner, more spacious layout. Scan a barcode and press Enter to jump to the next field (also navigable with `↑`/`↓`). Errors now appear clearly inside the dialog.
+- **Products tab layout improved:** Adding products and searching the list are now visually separated; the search box sits as a "filter" attached to the table, removing the confusion of typing a barcode there to add.
+
+**Checkout Screen**
+- **Quick products fully visible:** More than two rows of quick products are now reachable — all shown via `F4` or the "⤢ All" window. **Drag and drop** to reorder them.
+- **Your store name & logo in the header:** Your store name appears at the top left. Change it anytime from **Management → Printer → "Store Name"**.
+- **Row deletion (`Del`) fixed:** Removes the selected row, or the last row if none is selected; works even while typing in the barcode field.
+
+**Login**
+- **"Remember me" option:** When off, your login (including password) is not saved — for shared terminals.
+
+**Backup & Stability**
+- Backups are taken **once per day** (a case of taking them twice a day was fixed).
+- A rare **"access blocked"** situation (license cache corruption) was resolved; general stability and security improvements.
+
+---
+
 ## v2.3.6 — 2026-06-17
 
 ### TR — Değişiklikler

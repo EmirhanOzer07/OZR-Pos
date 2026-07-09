@@ -208,7 +208,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.3.6 — Çoklu sepet (aynı anda 3 müşteri), uzun oturum kararlılığı, barkod/Enter iyileştirmeleri / Multiple parked carts, long-session stability, barcode/Enter improvements
+**Son sürüm / Latest:** v2.3.7 — Yenilenen ekleme/düzenleme ekranları, hızlı ürünler ızgara + sürükle-sırala, başlıkta market adı/logo, günlük yedek düzeltmesi / Redesigned add/edit screens, quick-products grid + drag-reorder, store name/logo in header, daily-backup fix
 
 ---
 
