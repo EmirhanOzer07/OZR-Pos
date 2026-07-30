@@ -42,8 +42,8 @@
 ### Yedekleme
 ![Yedek](docs/screenshots/yedek.png)
 
-### Otomatik Güncelleme
-![Güncelleme](docs/screenshots/guncelleme.png)
+### İlk Kurulum / 15 Gün Ücretsiz Demo
+![İlk Kurulum](docs/screenshots/ilk-kurulum.png)
 
 </details>
 
