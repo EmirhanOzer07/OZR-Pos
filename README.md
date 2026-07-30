@@ -73,6 +73,17 @@
 
 **EN:** Click **"Start Demo"** on first launch. All features work fully for 15 days. After the trial, enter your license key to continue from where you left off — your data is preserved.
 
+<details>
+<summary>Demo süreci ekranları / Demo flow screenshots</summary>
+
+### Kalan süre bildirimi / Days-remaining banner
+![Demo Banner](docs/screenshots/demo-banner.jpg)
+
+### Lisans aktivasyonu / License activation
+![Lisans Aktivasyonu](docs/screenshots/lisans-aktivasyon.jpg)
+
+</details>
+
 ---
 
 <a id="-kurulum--installation"></a>
