@@ -2,6 +2,20 @@
 
 ---
 
+## v2.3.8 — 2026-09-01
+
+### TR — Değişiklikler
+
+**Kararlılık**
+- Nadir bir durumda ("erişim engellendi" / uygulama açılmıyor), bilgisayar adı ile Windows kullanıcı adı aynı olduğunda dosya izinleri yanlış ayarlanabiliyordu — düzeltildi.
+
+### EN — Changes
+
+**Stability**
+- Fixed a rare case where file permissions could be set incorrectly when the computer name matched the Windows username, causing "access denied" / startup failures.
+
+---
+
 ## v2.3.7 — 2026-07-09
 
 ### TR — Değişiklikler
