@@ -19,6 +19,6 @@ Varsa örnek, ekran görüntüsü veya referans ekleyin.
 Attach examples, screenshots, or references if available.
 
 ---
-> **Not / Note:** Öneriler değerlendirilecek ve gelecek sürümlerde hayata geçirilecektir.
+> **Not / Note:** Tüm öneriler değerlendirilir; uygun görülenler gelecek sürümlerde eklenebilir.
 > Suggestions will be reviewed and may be implemented in future releases.
 > Doğrudan iletişim / Direct contact: emirhann0077@gmail.com

@@ -158,9 +158,9 @@
 <details>
 <summary><strong>Verilerim nerede saklanıyor? / Where is my data stored?</strong></summary>
 
-**TR:** Tüm veriler şifrelenmiş olarak kendi bilgisayarınızda saklanır (veritabanı AES, yedekler AES-256). Hiçbir veri dışarıya gönderilmez.
+**TR:** Tüm veriler şifrelenmiş olarak kendi bilgisayarınızda saklanır (veritabanı AES, yedekler AES-256). Satış, ürün ve müşteri verileriniz bilgisayarınızdan çıkmaz; internet yalnızca lisans doğrulaması ve güncelleme kontrolü için kullanılır.
 
-**EN:** All data is stored locally on your computer, encrypted (AES database, AES-256 backups). Nothing is sent to external servers.
+**EN:** All data is stored locally on your computer, encrypted (AES database, AES-256 backups). Your sales, product and customer data never leave your computer; the internet is used only for license validation and update checks.
 </details>
 
 <details>
@@ -219,7 +219,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.3.7 — Yenilenen ekleme/düzenleme ekranları, hızlı ürünler ızgara + sürükle-sırala, başlıkta market adı/logo, günlük yedek düzeltmesi / Redesigned add/edit screens, quick-products grid + drag-reorder, store name/logo in header, daily-backup fix
+**Son sürüm / Latest:** v2.3.8 — Bilgisayar adı ile kullanıcı adı aynı olduğunda görülebilen "erişim engellendi" sorunu giderildi / Fixed a rare "access denied" issue when the computer name matches the Windows user name
 
 ---
 

@@ -25,7 +25,7 @@
 - **Ürünler sekmesi düzeni iyileştirildi:** Ürün ekleme ile listede arama görsel olarak ayrıldı; arama kutusu artık tabloya bitişik bir "filtre" gibi durur, "buraya barkod yazıp ekleme yapılır mı?" karışıklığı giderildi.
 
 **Kasa Ekranı**
-- **Hızlı ürünler artık tam görünür:** İkiden fazla hızlı ürün de erişilebilir — hepsi `F4` veya "⤢ Tümü" penceresinde. Ürünleri **sürükleyip bırakarak** istediğiniz sıraya dizebilirsiniz.
+- **Hızlı ürünler artık tam görünür:** Ekrana sığmayan hızlı ürünlere de erişilebilir — hepsi `F4` veya "⤢ Tümü" penceresinde. Ürünleri **sürükleyip bırakarak** istediğiniz sıraya dizebilirsiniz.
 - **Başlıkta market adınız ve logonuz:** Sol üstte marketinizin adı görünür. Adı istediğiniz zaman **Yönetim → Yazıcı → "Market Adı"** alanından değiştirebilirsiniz.
 - **Satır silme (`Del`) düzeltildi:** Seçili satırı, seçim yoksa son satırı siler; barkod alanı yazımdayken de çalışır.
 
@@ -43,7 +43,7 @@
 - **Products tab layout improved:** Adding products and searching the list are now visually separated; the search box sits as a "filter" attached to the table, removing the confusion of typing a barcode there to add.
 
 **Checkout Screen**
-- **Quick products fully visible:** More than two rows of quick products are now reachable — all shown via `F4` or the "⤢ All" window. **Drag and drop** to reorder them.
+- **Quick products fully visible:** Quick products that don't fit on screen are now reachable — all shown via `F4` or the "⤢ All" window. **Drag and drop** to reorder them.
 - **Your store name & logo in the header:** Your store name appears at the top left. Change it anytime from **Management → Printer → "Store Name"**.
 - **Row deletion (`Del`) fixed:** Removes the selected row, or the last row if none is selected; works even while typing in the barcode field.
 
@@ -81,9 +81,6 @@
 **Yazıcı**
 - **Test fişi durumu net bildiriliyor:** Yazıcı seçili/bağlı değilse artık açık uyarı verir (eskiden her durumda "gönderildi" diyordu).
 
-**Teknik**
-- Test sayısı: 157
-
 ### EN — Changes
 
 **Sales Screen**
@@ -107,8 +104,6 @@
 **Printer**
 - **Clear test-receipt status:** If no printer is selected/connected, a clear warning is now shown (previously it always said "sent").
 
-**Technical**
-- Test count: 157
 
 ---
 
@@ -117,16 +112,16 @@
 ### TR — Değişiklikler
 
 **Yönetim Ekranı — Ürün Ekleme**
-- **Çift gönderim koruması:** "Ekle" tuşuna veya Enter'a iki kez basılınca aynı ürün iki kez gönderiliyordu; ilk istek başarıyla kaydedilip ikincisi hata verdiği için kullanıcı "ürün eklenemedi" görüyordu. API yanıtı gelene kadar alanlar artık kilitlenir.
+- **Çift gönderim koruması:** "Ekle" tuşuna veya Enter'a hızlıca iki kez basılınca ürün kaydedildiği hâlde "ürün eklenemedi" uyarısı görülebiliyordu. Kayıt tamamlanana kadar alanlar artık kilitlenir.
 - **Anlamlı hata mesajı:** Aynı barkod tekrar eklenmeye çalışılınca "Ürün eklenemedi!" yerine artık "Bu barkod bu markette zaten kayıtlı!" mesajı görünür.
-- **Hata tespiti:** Backend'den gelen hata yanıtları artık kullanıcıya doğru şekilde iletilir; önceden 400 yanıtında yanlışlıkla "✓ Eklendi" gösteriliyordu.
+- **Doğru sonuç bildirimi:** Kaydedilemeyen bir ürün için yanlışlıkla "✓ Eklendi" gösterilebiliyordu; artık sonuç her zaman doğru bildirilir.
 
 ### EN — Changes
 
 **Management Screen — Product Add**
-- **Double-submit protection:** Pressing "Add" or Enter twice sent the same product twice — the first request saved successfully while the second returned an error, causing the user to see "product could not be added". Fields are now locked until the API responds.
+- **Double-submit protection:** Pressing "Add" or Enter twice quickly could show "product could not be added" even though the product was saved. Fields are now locked until saving completes.
 - **Meaningful error message:** Attempting to add a duplicate barcode now shows "This barcode is already registered in this store!" instead of the generic "Product could not be added!"
-- **Error detection:** Backend error responses are now correctly shown to the user; previously a 400 response incorrectly displayed "✓ Added".
+- **Accurate result message:** A product that could not be saved could incorrectly show "✓ Added"; the result is now always reported correctly.
 
 ---
 
@@ -145,30 +140,22 @@
 **Yönetim Ekranı**
 - Rapor sekmesine "Tüm Zamanlar" butonu eklendi — tüm geçmişi tek tıkla görüntüleme
 - Ciro sekmesi kaldırıldı (rapor sekmesi tüm ihtiyacı karşılıyor)
-- **Fiyat düzenleme:** Negatif fiyat girişi artık engelleniyor (önceden backend 400 dönse de ekranda "✓ Güncellendi" görünüyordu)
+- **Fiyat düzenleme:** Negatif fiyat girişi artık engelleniyor (önceden kaydedilmese de ekranda "✓ Güncellendi" görünüyordu)
 - **Kasiyer ekleme:** Aynı kullanıcı adı eklenmeye çalışıldığında hata mesajı artık ekranda görünüyor (önceden boş görünüyordu)
-
-**Patron Ekranı**
-- Market tablosuna "Son Bağlantı" sütunu eklendi — her marketin en son ne zaman aktif olduğu görülebiliyor (Az önce / N saat önce / N gün önce / Hiç bağlanmadı)
-- Son Bağlantı sütununda saat farkı artık doğru hesaplanıyor (UTC düzeltmesi)
-- Geçmiş tarihle lisans uzatma artık engelleniyor
-- Market aktif/deaktif değiştirme işleminin sonucu artık doğru bildiriliyor
 
 **Düzeltmeler**
 - **Şifre değiştirme (yeni şifre):** Yeni şifrenin sonunda boşluk olduğunda kullanıcı kendi hesabına giremez hale geliyordu; giderildi
 - **Şifre değiştirme (mevcut şifre alanı):** Giriş ekranı mevcut şifreyi boşluklu yazınca kabul ederken şifre değiştirme ekranındaki "mevcut şifre" alanı aynı şifreyi reddediyordu; davranış tutarlı hale getirildi
 - **Kasiyer ekleme (şifre depolama):** Kasiyer şifresi boşlukla eklendiğinde kasiyer kendi hesabına giremez hale geliyordu; şifre değiştirme ve ilk kurulumla tutarlı şekilde düzeltildi
-- **Uygulama simgesi düzeltildi:** v2.3.2 güncellemesiyle birlikte exe içine gömülen ikon bozulmuştu; Windows varsayılan ikonu görünüyordu. Kök neden: ICO dosyası eski BMP formatındaydı, .NET yükleyemiyordu. PNG formatına dönüştürüldü — hem görev çubuğu hem masaüstü kısayolu ikonu artık doğru görünür. Yeni kurulum yapan kullanıcılarda ikon hemen düzelir; oto-güncelleme yapanlarda pencere ikonu düzelir.
+- **Uygulama simgesi düzeltildi:** v2.3.2 güncellemesiyle birlikte exe içine gömülen ikon bozulmuştu; Windows varsayılan ikonu görünüyordu. Hem görev çubuğu hem masaüstü kısayolu ikonu artık doğru görünür. Yeni kurulum yapan kullanıcılarda ikon hemen düzelir; oto-güncelleme yapanlarda pencere ikonu düzelir.
 - Fatura yazdırma hatası artık yazıcı bulunamasa bile kasa ekranında bildirim olarak gösteriliyor
 
-**Teknik**
-- Uygulama kapatılırken gereksiz lisans sunucusu isteği kaldırıldı — bağlantı hatası oluşmuyordu ama gereksiz gecikme yaratıyordu
-- Lisans sunucusuna bağlantı hataları (429, 500 vb.) artık tutarlı şekilde işleniyor
+**Kararlılık**
+- Uygulama kapanışı hızlandı (kapanırken gereksiz bağlantı beklemesi kaldırıldı)
+- Lisans doğrulamasında bağlantı sorunları daha sağlam karşılanıyor
 - Lisans bitiş tarihi her girişte otomatik güncelleniyor — uzun vadede "Erişim Engellendi" riski giderildi
-- Tema değişikliği sırasında CSS geçici dosyası yeniden oluşturulmaz (önbellekleme)
-- Hızlı ürün ekleme/düzenleme diyaloglarında fiyat hesaplaması kesinlik artırıldı (BigDecimal)
-- Kod kalitesi iyileştirmeleri: APPDATA yolu tek kaynaktan yönetiliyor, ölü kod temizlendi
-- Test sayısı: 124
+- Tema değişikliği daha hızlı
+- Hızlı ürün ekleme/düzenleme ekranlarında fiyat hesaplaması kuruş hassasiyetinde
 
 ### EN — Changes
 
@@ -183,30 +170,36 @@
 **Management Screen**
 - "All Time" button added to the Report tab — view full history with one click
 - Revenue tab removed (the Report tab covers all use cases)
-- **Price editing:** Negative price entry is now blocked (previously the backend rejected it with 400 but the screen showed "✓ Updated")
+- **Price editing:** Negative price entry is now blocked (previously the screen showed "✓ Updated" even though nothing was saved)
 - **Add cashier:** Duplicate username error message is now displayed correctly (was blank before)
-
-**Owner Screen**
-- "Last Connection" column added to market table — shows when each store last connected (Just now / N hours ago / N days ago / Never connected)
-- Last Connection time difference now calculated correctly (UTC fix)
-- Setting a past date for license renewal is now blocked
-- Active/deactivate market result is now reported correctly
 
 **Fixes**
 - **Password change (new password):** A trailing space in the new password caused the user to be locked out of their account; fixed
 - **Password change (current password field):** The login screen accepted the current password with trailing spaces, but the "current password" field in the change dialog rejected it; behavior is now consistent
 - **Add cashier (password storage):** A cashier added with a trailing space in their password could not log in to their account; fixed to be consistent with password change and initial setup
-- **App icon fixed:** After the v2.3.2 update, the icon embedded in the exe was broken — Windows showed the default Java icon. Root cause: the ICO file was in legacy BMP format that .NET cannot load. Converted to PNG format — both taskbar and desktop shortcut icons now display correctly. Fresh installations from v2.3.3 ZIP fix the icon immediately; users updating via auto-update will see the correct window icon.
+- **App icon fixed:** After the v2.3.2 update, the icon embedded in the exe was broken — Windows showed the default Java icon. Both taskbar and desktop shortcut icons now display correctly. Fresh installations from v2.3.3 ZIP fix the icon immediately; users updating via auto-update will see the correct window icon.
 - Receipt printing errors now shown as in-app notifications even when no printer is found
 
-**Technical**
-- Removed unnecessary license server call on app exit
-- License server connection errors (429, 500, etc.) now handled consistently
+**Stability**
+- Faster app exit (removed an unnecessary connection wait on close)
+- License validation handles connection problems more robustly
 - License expiry date now auto-synced on every login — eliminates long-term "Access Denied" risk
-- CSS temp file is no longer recreated on every theme toggle (caching)
-- Improved price calculation precision in quick product add/edit dialogs (BigDecimal)
-- Code quality: AppData path now sourced from a single location; dead code removed
-- Test count: 124
+- Faster theme switching
+- Exact (to-the-cent) price calculation in quick product add/edit dialogs
+
+---
+
+## v2.3.3 — 2026-05-30
+
+### TR — Değişiklikler
+- **Uygulama simgesi düzeltildi:** v2.3.2 ile bozulan simge yeniden doğru görünür (yeni kurulumda masaüstü kısayolu dahil; otomatik güncellemede pencere ve görev çubuğu).
+- **Güncelleme ekranı:** İlerleme penceresi artık donmuyor; tamamlandı/hata bildirimi otomatik gelir.
+- Kasa ekranı iyileştirmelerinin ilk bölümü bu sürümde geldi; tam liste v2.3.4 notlarındadır.
+
+### EN — Changes
+- **App icon fixed:** The icon broken in v2.3.2 displays correctly again (including the desktop shortcut on fresh installs; window and taskbar via auto-update).
+- **Update screen:** The progress window no longer freezes; completion/error notices appear automatically.
+- The first part of the checkout-screen improvements shipped in this release; see the v2.3.4 notes for the full list.
 
 ---
 
@@ -215,15 +208,15 @@
 ### TR — Değişiklikler
 
 **Düzeltmeler**
-- JWT oturumu sona erince uygulama sessizce çöküyor ve giriş ekranına dönmüyordu; artık otomatik olarak giriş ekranına yönlendiriyor
-- SHA-256 doğrulaması: bazı sistemlerde dosya hash'i başına BOM karakteri ekleniyordu; temizlendi — güncelleme doğrulama hatası giderildi
+- Oturum süresi dolunca uygulama sessizce çalışmaz hâle geliyor ve giriş ekranına dönmüyordu; artık uyarı verip giriş ekranına yönlendiriyor
+- Bazı bilgisayarlarda güncelleme dosyası doğrulaması hatalı olarak başarısız oluyordu; giderildi
 - Uygulama simgesi düzeltildi (piksel bozulması)
 
 ### EN — Changes
 
 **Fixes**
-- When the JWT session expired, the app crashed silently without returning to the login screen; it now redirects automatically
-- SHA-256 verification: some systems prepended a BOM character to the file hash, causing update validation to fail; cleaned up
+- When the session expired, the app silently stopped working without returning to the login screen; it now warns and redirects automatically
+- On some computers the update file verification failed incorrectly; fixed
 - Application icon rendering fix (pixel corruption)
 
 ---
@@ -251,40 +244,24 @@
 ### TR — Değişiklikler
 
 **Güvenlik**
-- UrunController: `@Cacheable` kaldırıldı — cache hit'te market yetki kontrolü atlanıyordu, artık her istekte çalışır
-- SatisRepository: `findAllByKullaniciId` sorgusuna eksik `market.id` filtresi eklendi
+- Yetki denetimleri güçlendirildi; güvenlik iyileştirmeleri
 
 **Düzeltmeler**
-- CSV yükleme: 1 MB'dan büyük dosyalar Spring multipart filtresi nedeniyle 500 döndürüyordu; artık 5 MB'ya kadar destekleniyor
-- CSV yükleme: toplu yükleme yedeği artık transaction commit sonrası alınıyor — yeni ürünler artık yedeğe dahil
-- VeriTabaniAnahtarService: `icacls` process pipe buffer deadlock riski giderildi
+- CSV yükleme: 1 MB'dan büyük dosyalar yüklenemiyordu; artık 5 MB'a kadar destekleniyor
+- CSV toplu yüklemeden sonra alınan yedek artık yeni eklenen ürünleri de içeriyor
+- İlk kurulumda nadiren görülen takılma riski giderildi
 - Büyük dosya yükleme hatası artık "Sunucu hatası oluştu" yerine anlaşılır mesaj veriyor
-
-**Testler**
-- JWT süresi dolmuş token reddi testi eklendi
-- Satış özeti endpoint'inde market izolasyon testi eklendi
-- CSV dosya boyutu sınırı (5 MB) testi eklendi
-- CSV hatalı Content-Type reddi testi eklendi (CWE-434)
-- Toplam test sayısı: 118
 
 ### EN — Changes
 
 **Security**
-- UrunController: removed `@Cacheable` — authorization check was bypassed on cache hits; now runs on every request
-- SatisRepository: added missing `market.id` filter to `findAllByKullaniciId`
+- Strengthened authorization checks; security improvements
 
 **Fixes**
-- CSV upload: files larger than 1 MB returned HTTP 500 due to Spring multipart limit; now supports up to 5 MB
-- CSV upload: bulk upload backup now taken after transaction commit — newly added products are included
-- VeriTabaniAnahtarService: fixed `icacls` process pipe buffer deadlock risk
+- CSV upload: files larger than 1 MB could not be uploaded; now supports up to 5 MB
+- The backup taken after a bulk CSV upload now includes the newly added products
+- Fixed a rare hang risk during first-time setup
 - Large file upload error now returns a clear user message instead of "Server error"
-
-**Tests**
-- Added JWT expired token rejection test
-- Added sales summary endpoint market isolation test
-- Added CSV file size limit (5 MB) test
-- Added CSV wrong Content-Type rejection test (CWE-434)
-- Total test count: 118
 
 ---
 
@@ -315,64 +292,62 @@
 ### TR — Değişiklikler
 
 **Düzeltmeler**
-- Hızlı ürün ekleme: Barkod okutulduktan hemen sonra ürün bulunamıyor sorun giderildi
+- Hızlı ürün ekleme: yeni eklenen ürünün barkodu hemen okutulunca "bulunamadı" görünmesi sorunu giderildi
 - Ürün güncelleme (F2 hızlı fiyat, yönetim ekranı düzenleme, CSV çakışma çözümü) artık yedek alıyor
 
 **İyileştirmeler**
 - Her satıştan sonra gereksiz veritabanı yedekleme kaldırıldı → satış işlemi belirgin şekilde hızlandı
-- Uygulama bellek sınırı 256 MB → 512 MB olarak artırıldı (uzun çalışmada çöküş riski azaldı)
+- Uygulamanın kullanabildiği bellek artırıldı (uzun çalışmada çökme riski azaldı)
 - Şifreleme anahtarı yoksa uygulama sessiz hata yerine açık hata mesajı veriyor
 
 **Güvenlik**
-- Yönetici API erişimi için JWT doğrulaması güçlendirildi
-
----
+- Oturum doğrulaması güçlendirildi
 
 ### EN — Changes
 
 **Fixes**
 - Quick product add: resolved "barcode not found" immediately after adding a new product
-- Product updates (F2 quick price, admin edit, CSV conflict resolution) now trigger backups
+- Product updates (F2 quick price, management screen edit, CSV conflict resolution) now trigger backups
 
 **Improvements**
 - Removed unnecessary full database dump after every sale → noticeably faster checkout
-- JVM heap increased 256 MB → 512 MB (reduced risk of out-of-memory crashes on long sessions)
+- Increased the memory available to the app (reduced risk of crashes on long sessions)
 - Encryption key errors now fail with a clear message instead of silent failure
 
 **Security**
-- Strengthened JWT validation for admin API access
+- Strengthened session validation
 
 ---
 
-## v2.2.9 — 2026-04-10
+## v2.2.9 — 2026-05-21
 
 ### TR
 - Toplu CSV yükleme: aynı barkodda farklı fiyat/isim çakışması tespit ve çözüm ekranı
-- Güncelleme döngüsü önleme: `.installed_version` dosyası ile sürüm takibi
+- Güncelleme kurulduktan sonra aynı güncellemenin tekrar önerilmesi engellendi
 - Satış ekranı indirim özelliği (F3)
 - Hata düzeltmeleri ve kararlılık iyileştirmeleri
 
 ### EN
 - Bulk CSV upload: conflict detection and resolution for duplicate barcodes with different data
-- Update loop prevention via `.installed_version` file
+- The same update is no longer offered again after it has been installed
 - Discount feature on sales screen (F3)
 - Bug fixes and stability improvements
 
 ---
 
-## v2.2.4
+## v2.2.4 — 2026-05-20
 
 - Güncelleme dialog genişliği ve ilerleme çubuğu düzeltmesi
-- H2 kilit retry mekanizması
+- Güncelleme sonrası nadiren görülen "uygulama açılmıyor" hatası giderildi
 
-## v2.2.3
+## v2.2.3 — 2026-05-20
 
 - Güncelleme döngüsü ve dialog hataları giderildi
 
-## v2.2.2
+## v2.2.2 — 2026-05-16
 
 - Güvenlik yamaları, hata düzeltmeleri
 
-## v2.2.1 / v2.2.0
+## v2.2.1 / v2.2.0 — 2026-05
 
 - İlk kararlı 2.x serisi

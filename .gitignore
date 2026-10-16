@@ -18,7 +18,7 @@ config.properties
 patron.cfg
 *.log
 
-# Claude Code
+# Yerel araç ayarları
 .claude/
 
 # Oturum dışa aktarma dosyaları (özel, public repoya girmemeli)

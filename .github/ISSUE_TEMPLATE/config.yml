@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🌐 OZR POS Web Sitesi / Website
+    url: https://emirhanozer07.github.io/ozrpos-site/
+    about: Ürün bilgisi, fiyatlandırma ve iletişim / Product info, pricing and contact
+  - name: 💾 Yedekleme ve Kurtarma Rehberi / Backup & Recovery Guide
+    url: https://github.com/EmirhanOzer07/OZR-Pos/blob/main/YEDEK_REHBERI.md
+    about: Veri kaybı, format veya yeni bilgisayar durumlarında önce buraya bakın / Read this first for data loss, reformat or new PC
+  - name: 🔒 Güvenlik Açığı Bildirimi / Security Report
+    url: https://github.com/EmirhanOzer07/OZR-Pos/blob/main/SECURITY.md
+    about: Güvenlik açıklarını herkese açık issue olarak değil, buradaki yönergeyle bildirin / Report vulnerabilities privately, not as public issues

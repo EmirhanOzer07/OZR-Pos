@@ -174,7 +174,7 @@ Eski patron hesabınızla giriş yapın. Tüm verileriniz (ürünler, satışlar
 
 ---
 
-#### Senaryo C: Yeni bilgisayar aldınız 📞 Geliştirici Gerekli
+#### Senaryo C: Yeni bilgisayar aldınız 📞 Destek Gerekli
 
 Yeni bilgisayara geçişte **önce bizimle iletişime geçin.**
 
@@ -211,44 +211,6 @@ Ayda bir şu kontrolleri yapın:
 - [ ] Patron hesabı şifrenizi hatırlıyor musunuz?
 
 > ZIP dosyalarını çift tıklayıp açmayı **denemeyin** — şifreli oldukları için Windows "geçersiz" der, bu normaldir (yukarıdaki bölüme bakın).
-
----
-
-### Geliştirici Müdahale Rehberi
-
-> Bu bölüm müşteri aradığında **geliştirici olarak** yapılacak adımları açıklar.
-
-#### Senaryo B — Müşteri Diski Formatladı
-
-Amaç: `pending_restore.flag` dosyasını oluşturarak uygulamanın startup'ta otomatik restore yapmasını sağlamak.
-
-**Yöntem 1: Uzaktan bağlantı (AnyDesk / TeamViewer)**
-
-1. Müşteriye AnyDesk veya TeamViewer kurdurun, erişim kodunu alın
-2. Bağlandıktan sonra sırayla:
-   - Drive'dan `.dbkey`, `config.properties`, `market-key.dat` dosyalarını `MarketPOS` klasörüne kopyalayın
-   - `MarketPOS\yedek\gunluk\` klasörünü oluşturun, Drive'daki ZIP'leri kopyalayın
-   - Not Defteri ile `pending_restore.flag` dosyasını oluşturun (içine en son ZIP'in tam yolunu yazın)
-   - Uygulamayı çalıştırın — otomatik restore başlar
-3. Müşteri patron hesabıyla başarıyla giriş yapabildikten sonra işlem tamamdır
-
-**Yöntem 2: Telefon rehberliği**
-
-Müşteriyle telefonda Senaryo B adımlarını birebir takip edin. Dikkat edilecekler:
-
-- **Adım 2:** `.dbkey` dosyası nokta ile başlıyor; dosya adı yanlış girilmemeli
-- **Adım 4:** Not Defteri → Farklı Kaydet → Kayıt türünü "Tüm Dosyalar" olarak seçmesi şart; aksi halde `.flag.txt` olarak kaydeder ve uygulama dosyayı görmez
-- **Adım 4:** ZIP dosyasının tam yolunu doğru yazdığından emin olun (tarih ve sürücü harfi dahil)
-
----
-
-#### Senaryo C — Yeni Bilgisayar
-
-1. OZR POS PatronEkrani'nı açın
-2. Market sekmesinden müşterinin eski kaydını bulun
-3. Eski market anahtarını devre dışı bırakın veya yeni kayıt oluşturun
-4. Müşteriye yeni aktivasyon bilgisini iletin
-5. Ardından Senaryo B adımlarını müşteriye telefon/uzaktan bağlantıyla uygulayın
 
 ---
 
@@ -375,7 +337,7 @@ Log in with your patron account credentials. All your data will be restored.
 
 ---
 
-#### Scenario C: New computer 📞 Developer Required
+#### Scenario C: New computer 📞 Support Required
 
 When moving to a new computer, **contact us first.**
 
