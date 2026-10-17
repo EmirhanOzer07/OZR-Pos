@@ -2,6 +2,48 @@
 
 ---
 
+## v2.3.9 — 2026-10-18
+
+### TR — Değişiklikler
+
+**Veresiye Defteri (yeni)**
+- **Kasadan veresiye satış:** `F9` ile müşteri seçip sepeti müşterinin defterine yazabilir, aynı pencereden borç ödemesi (tahsilat) alabilirsiniz. Listede olmayan müşteriyi oradan hemen ekleyebilirsiniz.
+- **Yönetim → "📒 Veresiye" sekmesi:** Tüm müşteriler, güncel borçlar ve hesap hareketleri tek yerde. Müşteri bazında isteğe bağlı borç limiti tanımlanabilir; limit aşılınca kırmızı uyarı gösterilir (satış engellenmez).
+- **Fişler:** Veresiye fişinde müşteri adı, önceki borç, bu alışveriş ve toplam borç yazar. Ödeme alındığında ayrı bir tahsilat makbuzu basılabilir.
+- **Ödeme alırken koruma:** Tutar alanı boş gelir, "Tümünü Öde" kısayolu ve onay penceresi vardır — yanlışlıkla ödeme kaydedilmez.
+- **Yetkiler:** Kasiyer veresiye satış, tahsilat ve yeni müşteri ekleme yapabilir; düzeltme, limit, müşteri düzenleme/pasife alma ve içe aktarma yalnızca yönetici (ADMIN) içindir.
+- **Raporlar:** Rapor sekmesinde veresiye satış ve tahsilat tutarları ayrıca gösterilir.
+- **Defter hiç kaybolmaz:** Veresiye kayıtları şifreli veritabanında tutulur, her değişiklikten sonra yedeklenir ve Excel yedek klasörünüzdeki `veresiye` klasörüne okunabilir bir **Excel defteri** olarak da yazılır (son 60 günün günlük kopyalarıyla birlikte). Program silinse veya bilgisayar değişse bile bu Excel dosyası yeni kuruluma içe aktarılabilir.
+
+**Kasa Ekranı**
+- **`F7` — İsimle Ara:** Barkodu okunmayan veya etiketi olmayan ürünü adıyla bulup sepete ekleyin.
+- **`F8` — Fiyat Sor:** Müşterinin "bu ne kadar?" diye sorduğu ürünün fiyatını sepete eklemeden görün.
+
+**Destek ve Kararlılık**
+- **Teknik sağlık raporu:** Uygulama, internet varken açılış, güncelleme, yedekleme ve hata durumlarına dair kısa teknik bilgileri destek ekibimize iletir; böylece sorunları siz fark etmeden giderebiliriz. Satış, ürün, fiyat, müşteri ve veresiye bilgileri bu rapora **hiçbir koşulda girmez**. Ayrıntılar: [Gizlilik](https://emirhanozer07.github.io/ozrpos-site/gizlilik.html)
+- Genel kararlılık iyileştirmeleri.
+
+### EN — Changes
+
+**Credit Ledger ("Veresiye") — new**
+- **Credit sales at checkout:** Press `F9` to pick a customer and record the cart on their tab, or take a debt payment from the same window. New customers can be added on the spot.
+- **Management → "📒 Veresiye" tab:** All customers, current balances and account history in one place. Optional per-customer credit limit; exceeding it shows a red warning (the sale is not blocked).
+- **Receipts:** Credit receipts show the customer, previous balance, this purchase and total balance. A separate payment receipt can be printed when a payment is taken.
+- **Safe payment entry:** The amount field starts empty, with a "Pay All" shortcut and a confirmation dialog — no accidental payments.
+- **Permissions:** Cashiers can make credit sales, take payments and add customers; corrections, limits, editing/deactivating customers and imports are admin-only.
+- **Reports:** Credit sales and collected payments are shown separately on the Report tab.
+- **The ledger is never lost:** Records live in the encrypted database, are backed up after every change, and are also written as a readable **Excel ledger** to the `veresiye` folder inside your Excel backup folder (with daily copies for the last 60 days). Even if the program is removed or the computer is replaced, this Excel file can be imported into a new installation.
+
+**Checkout Screen**
+- **`F7` — Search by Name:** Find and add a product whose barcode can't be scanned or has no label.
+- **`F8` — Price Check:** See a product's price without adding it to the cart.
+
+**Support & Stability**
+- **Technical health report:** When online, the app sends short technical information about startups, updates, backups and errors to our support team, so we can fix problems before you notice them. Sales, product, price, customer and credit-ledger data are **never** included. Details: [Privacy](https://emirhanozer07.github.io/ozrpos-site/gizlilik.html)
+- General stability improvements.
+
+---
+
 ## v2.3.8 — 2026-09-01
 
 ### TR — Değişiklikler

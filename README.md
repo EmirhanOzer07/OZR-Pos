@@ -53,10 +53,11 @@
 
 | | TR | EN |
 |---|---|---|
-| 🛒 Kasa | Barkod okuyucu, **çoklu sepet (3 kasa — aynı anda 3 müşteri)**, nakit/kart ödeme, klavye kısayolları | Barcode scanner, **multiple parked carts (3 registers)**, cash/card payment, keyboard shortcuts |
+| 🛒 Kasa | Barkod okuyucu, **çoklu sepet (3 kasa — aynı anda 3 müşteri)**, nakit/kart ödeme, isimle ürün arama, fiyat sorma, klavye kısayolları | Barcode scanner, **multiple parked carts (3 registers)**, cash/card payment, search by name, price check, keyboard shortcuts |
+| 📒 Veresiye | Müşteri borç defteri: kasadan veresiye satış ve tahsilat, borç limiti, fiş/makbuz, otomatik Excel defter yedeği | Customer credit ledger: credit sales and payments at checkout, credit limits, receipts, automatic Excel ledger backup |
 | 📦 Ürünler | Tekil ekleme veya CSV ile 10.000+ ürün yükleme | Single add or bulk CSV upload (10,000+ products) |
 | 👥 Personel | ADMIN ve KASİYER rolleri, şifre değiştirme | ADMIN and CASHIER roles, password management |
-| 📊 Raporlar | Günlük/dönemsel ciro, nakit-kart ayrımı | Daily/periodic revenue, cash-card breakdown |
+| 📊 Raporlar | Günlük/dönemsel ciro, nakit-kart-veresiye ayrımı | Daily/periodic revenue, cash/card/credit breakdown |
 | 💾 Yedekleme | Her açılışta otomatik SQL yedeği + gece Excel listesi | Auto SQL backup on launch + nightly Excel export |
 | ♻️ Geri Yükleme | Günlük ve işlem yedeklerinden tek tıkla geri dönüş | One-click restore from daily and per-operation backups |
 | 🔄 Güncelleme | Yeni sürüm bildirimi gelir, tek onayla indirilip uygulanır | Update notification appears; one click downloads and applies it |
@@ -150,17 +151,17 @@
 <details>
 <summary><strong>İnternet bağlantısı şart mı? / Is internet required?</strong></summary>
 
-**TR:** Hayır. Günlük satış işlemleri için internet gerekmez. Yalnızca güncelleme ve lisans doğrulaması sırasında kullanılır.
+**TR:** Hayır. Günlük satış işlemleri için internet gerekmez. Yalnızca güncelleme, lisans doğrulaması ve teknik sağlık raporu için kullanılır.
 
-**EN:** No. Daily operations work offline. Internet is only used for updates and license validation.
+**EN:** No. Daily operations work offline. Internet is only used for updates, license validation and the technical health report.
 </details>
 
 <details>
 <summary><strong>Verilerim nerede saklanıyor? / Where is my data stored?</strong></summary>
 
-**TR:** Tüm veriler şifrelenmiş olarak kendi bilgisayarınızda saklanır (veritabanı AES, yedekler AES-256). Satış, ürün ve müşteri verileriniz bilgisayarınızdan çıkmaz; internet yalnızca lisans doğrulaması ve güncelleme kontrolü için kullanılır.
+**TR:** Tüm veriler şifrelenmiş olarak kendi bilgisayarınızda saklanır (veritabanı AES, yedekler AES-256). Satış, ürün, müşteri ve veresiye verileriniz bilgisayarınızdan çıkmaz. İnternet yalnızca lisans doğrulaması, güncelleme kontrolü ve destek amaçlı teknik sağlık raporu (sürüm, işletim sistemi, son yedek zamanı, hata özetleri gibi teknik bilgiler — işletme verisi içermez) için kullanılır. Ayrıntılar: [Gizlilik](https://emirhanozer07.github.io/ozrpos-site/gizlilik.html)
 
-**EN:** All data is stored locally on your computer, encrypted (AES database, AES-256 backups). Your sales, product and customer data never leave your computer; the internet is used only for license validation and update checks.
+**EN:** All data is stored locally on your computer, encrypted (AES database, AES-256 backups). Your sales, product, customer and credit-ledger data never leave your computer. The internet is used only for license validation, update checks and a technical health report for support (version, OS, last backup time, error summaries and similar technical information — no business data). Details: [Privacy](https://emirhanozer07.github.io/ozrpos-site/gizlilik.html)
 </details>
 
 <details>
@@ -209,9 +210,9 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 | Hız Sınırı / Rate Limit | Giriş denemelerinde IP başına 10 istek/dk / 10 login attempts/min per IP |
 | Yetkilendirme / Authorization | Role tabanlı erişim kontrolü / Role-based access control |
 
-> **TR:** Tüm şifreleme anahtarları kurulum sırasında üretilir ve yalnızca sizin makinenizde saklanır. OZR POS, işletme verilerinizi hiçbir sunucuya iletmez.
+> **TR:** Tüm şifreleme anahtarları kurulum sırasında üretilir ve yalnızca sizin makinenizde saklanır. OZR POS, işletme verilerinizi (satış, ürün, müşteri, veresiye) hiçbir sunucuya iletmez.
 
-> **EN:** All encryption keys are generated at install time and stored only on your machine. OZR POS never transmits your business data to any server.
+> **EN:** All encryption keys are generated at install time and stored only on your machine. OZR POS never transmits your business data (sales, products, customers, credit ledger) to any server.
 
 ---
 
@@ -219,7 +220,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.3.8 — Bilgisayar adı ile kullanıcı adı aynı olduğunda görülebilen "erişim engellendi" sorunu giderildi / Fixed a rare "access denied" issue when the computer name matches the Windows user name
+**Son sürüm / Latest:** v2.3.9 — Veresiye Defteri, isimle ürün arama (`F7`) ve fiyat sorma (`F8`) / Credit ledger, search by name (`F7`) and price check (`F8`)
 
 ---
 
