@@ -17,12 +17,14 @@ Uygulama otomatik olarak şunları yapar:
 
 | Zaman | İçerik |
 |-------|--------|
-| Her açılışta | O gün için yedek yoksa tam veritabanı yedeği alınır |
-| Her gece 02:00 | Tam veritabanı yedeği |
-| Her gece 22:00 | Tüm ürünlerin Excel listesi |
-| Ürün eklendiğinde | Anlık yedek |
-| Ürün güncellendiğinde | Anlık yedek |
-| Ürün silindiğinde | Anlık yedek |
+| Her gün (gece 02:00) | Tam veritabanı yedeği — bilgisayar o saatte kapalı veya uykudaysa, açıldığında telafi edilir |
+| Her gün (akşam 22:00) | Tüm ürünlerin Excel listesi — kaçırılırsa telafi edilir |
+| Ürün ekleme, düzenleme, silme | Anlık işlem yedeği |
+| CSV ile toplu yükleme | Anlık işlem yedeği |
+| Veresiye satış ve ödemeleri | Anlık işlem yedeği |
+| Yedekten geri dönmeden hemen önce | Mevcut verinin yedeği (listede "geri yukleme oncesi") |
+
+Son 30 günlük yedek ve son 20 işlem yedeği saklanır.
 
 Yedekler şu konumda saklanır:
 ```
@@ -39,7 +41,7 @@ C:\Users\[KullanıcıAdınız]\AppData\Local\MarketPOS\yedek\
 **"Sıkıştırılmış klasör geçersiz"** der. Bu bir hata DEĞİLDİR:
 
 - Yedekleriniz market verinizi (satışlar, ürünler, personel) içerdiği için **AES-256 ile şifrelenir**. Windows şifreli dosyayı açamaz — açabilseydi, dosyayı ele geçiren herkes de açabilirdi.
-- Yedekler **yalnızca uygulama içinden** geri yüklenir: Yönetim Ekranı → Yedekler sekmesi. Uygulama şifreyi otomatik çözer.
+- Yedekler **yalnızca uygulama içinden** geri yüklenir: Yönetim Paneli → 💾 Yedek sekmesi. Uygulama şifreyi otomatik çözer.
 - Yedeklerin sağlıklı olduğunu dosyayı açarak değil, **tarihine ve boyutuna** bakarak doğrulayın (güncel tarihli ve 0 KB'tan büyük olmalı).
 
 > `yedek` klasörünün kökünde `veri_...zip` adında eski dosyalar görebilirsiniz — bunlar eski sürümlerden kalan şifresiz yedeklerdir, Windows açabilir ama uygulama artık bunları geri yüklemez. Güncel yedekleriniz `gunluk\` ve `islem\` klasörlerindekilerdir.
@@ -67,7 +69,7 @@ C:\Users\[KullanıcıAdınız]\AppData\Local\MarketPOS\yedek\
 Google Drive yedeğine ek olarak şunları **kağıda veya telefonda** not edin:
 
 - **Lisans aktivasyon kodunuz** (size e-posta ile iletildi)
-- **Patron hesabı kullanıcı adı ve şifresi**
+- **Yönetici hesabının kullanıcı adı ve şifresi**
 
 Bu bilgiler bilgisayar değiştirmeniz gerektiğinde hayat kurtarır.
 
@@ -79,11 +81,11 @@ Bu bilgiler bilgisayar değiştirmeniz gerektiğinde hayat kurtarır.
 
 #### Senaryo A: Uygulama bozuldu — Aynı bilgisayar ✅ Kolay
 
-Bu en basit durumdur. Windows'ta uygulama kaldırıldığında veriler silinmez.
+Bu en basit durumdur. Verileriniz program klasöründe değil, `AppData\Local\MarketPOS` klasöründe durur; program klasörünü silmek verilere dokunmaz.
 
-1. Eski uygulamayı kaldırın (Ayarlar → Uygulamalar → OZRPos)
-2. Yeni sürümü indirip kurun
-3. Eski kullanıcı adı ve şifrenizle giriş yapın
+1. Programı kapatın, eski `OZRPos` klasörünü silin
+2. [Son sürümü](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest) indirip ZIP'i aynı yere ayıklayın
+3. `OZRPos.exe` ile açıp eski kullanıcı adı ve şifrenizle giriş yapın
 4. Verileriniz yerli yerinde
 
 Google Drive'a gerek yoktur.
@@ -161,7 +163,7 @@ Uygulamayı açın. Uygulama `pending_restore.flag` dosyasını açılış sıra
 
 **Adım 6 — Giriş yapın**
 
-Eski patron hesabınızla giriş yapın. Tüm verileriniz (ürünler, satışlar, personel) geri yüklenmiş olacaktır.
+Eski yönetici hesabınızla giriş yapın. Tüm verileriniz (ürünler, satışlar, personel) geri yüklenmiş olacaktır.
 
 ---
 
@@ -191,11 +193,13 @@ Lisans aktarımı **ücretsizdir.**
 
 Uygulama çalışıyor ve giriş yapabiliyorsunuz.
 
-1. **Yönetim Ekranı → Yedekler sekmesi**
+1. **Yönetim Paneli → 💾 Yedek sekmesi**
 2. Listeden geri dönmek istediğiniz tarihe ait yedeği seçin
-3. **Geri Yükle** butonuna tıklayın
+3. **↩ Geri Yükle** butonuna tıklayın
 4. Çift onay ekranını geçin — uygulama kendini kapatır
-5. **Uygulamayı yeniden açın** — açılışta yedek otomatik yüklenir, seçtiğiniz tarihteki verilerle devam edersiniz
+5. **Uygulamayı yeniden açın** — açılışta yedek otomatik yüklenir ve sonucu ekranda bir mesajla gösterilir
+
+> Geri yüklemeden hemen önce mevcut verinizin yedeği otomatik alınır ve listede **"geri yukleme oncesi"** adıyla görünür. Yanlış tarihi seçtiyseniz bu yedeği geri yükleyerek eski halinize dönebilirsiniz.
 
 > Yedekler listesi boşsa `yedek\gunluk\` klasörünü kontrol edin; ZIP dosyaları orada olmalı.
 
@@ -208,7 +212,7 @@ Ayda bir şu kontrolleri yapın:
 - [ ] Google Drive'da `yedek` klasörü güncel mi? (Son 7 günde en az 1 ZIP görünmeli)
 - [ ] `yedek\gunluk\` klasöründe güncel tarihli, 0 KB'tan büyük ZIP dosyaları var mı?
 - [ ] `yedek\dbkey.bak` dosyası mevcut mu?
-- [ ] Patron hesabı şifrenizi hatırlıyor musunuz?
+- [ ] Yönetici hesabı şifrenizi hatırlıyor musunuz?
 
 > ZIP dosyalarını çift tıklayıp açmayı **denemeyin** — şifreli oldukları için Windows "geçersiz" der, bu normaldir (yukarıdaki bölüme bakın).
 
@@ -226,12 +230,14 @@ OZR POS stores all your data (products, sales, staff) encrypted **on your own co
 
 | When | What |
 |------|------|
-| Every launch | Full database backup if none exists for today |
-| Every night 02:00 | Full database backup |
-| Every night 22:00 | Full product list as Excel |
-| Product added | Immediate backup |
-| Product updated | Immediate backup |
-| Product deleted | Immediate backup |
+| Daily (02:00) | Full database backup — if the computer is off or asleep at that time, it is taken when it wakes up |
+| Daily (22:00) | Full product list as Excel — caught up if missed |
+| Product added, edited, deleted | Immediate per-operation backup |
+| Bulk CSV import | Immediate per-operation backup |
+| Credit (veresiye) sales and payments | Immediate per-operation backup |
+| Right before a restore | Backup of the current data (shown as "geri yukleme oncesi") |
+
+The last 30 daily backups and the last 20 per-operation backups are kept.
 
 Backups are stored at:
 ```
@@ -247,7 +253,7 @@ C:\Users\[YourUsername]\AppData\Local\MarketPOS\yedek\
 If you double-click the `.zip` files in `gunluk\` or `islem\`, Windows says **"The compressed folder is invalid"**. This is NOT an error:
 
 - Backups contain your business data, so they are **encrypted with AES-256**. Windows cannot open an encrypted file — if it could, so could anyone who copied it.
-- Backups can only be restored **from inside the app**: Management Screen → Backups tab. The app decrypts them automatically.
+- Backups can only be restored **from inside the app**: Management Panel → 💾 Backup (Yedek) tab. The app decrypts them automatically.
 - To verify a backup is healthy, check its **date and size** (recent date, larger than 0 KB) — do not try to open it.
 
 > You may see older `veri_...zip` files in the root of the `yedek` folder — these are unencrypted backups from older versions; Windows can open them but the app no longer restores them. Your current backups are the ones in `gunluk\` and `islem\`.
@@ -270,7 +276,7 @@ If you double-click the `.zip` files in `gunluk\` or `islem\`, Windows says **"T
 
 #### Scenario A: App broke, same computer ✅ Easy
 
-Uninstall → reinstall → log in with old credentials. Data is preserved. No Drive needed.
+Your data lives in `AppData\Local\MarketPOS`, not in the program folder. Close the app, delete the old `OZRPos` folder, extract the [latest release](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest) ZIP in its place and log in with your old credentials. Data is preserved. No Drive needed.
 
 ---
 
@@ -327,7 +333,7 @@ Open the app. It will detect the flag file during startup and **automatically re
 
 **Step 6 — Log in**
 
-Log in with your patron account credentials. All your data will be restored.
+Log in with your administrator account credentials. All your data will be restored.
 
 ---
 
@@ -354,11 +360,13 @@ License transfer is **free of charge.**
 
 The app is running and you can log in.
 
-1. **Management Screen → Backups tab**
+1. **Management Panel → 💾 Backup (Yedek) tab**
 2. Select the backup from the date you want to restore
-3. Click **Restore**
+3. Click **↩ Geri Yükle (Restore)**
 4. Confirm twice — the app closes itself
-5. **Reopen the app** — the backup is applied during startup and your data from the selected date is restored
+5. **Reopen the app** — the backup is applied during startup and the result is shown in a message
+
+> Right before restoring, the app automatically backs up your current data (listed as **"geri yukleme oncesi"**). If you picked the wrong date, restore that backup to get back to where you were.
 
 ---
 
@@ -367,10 +375,10 @@ The app is running and you can log in.
 - [ ] Is the Drive `yedek` folder up to date? (At least 1 ZIP from the last 7 days)
 - [ ] Are recent ZIP files (larger than 0 KB) present in `yedek\gunluk\`?
 - [ ] Does `yedek\dbkey.bak` exist?
-- [ ] Do you remember your patron account password?
+- [ ] Do you remember your administrator account password?
 
 > Do **not** try to open the ZIP files by double-clicking — they are encrypted, so Windows reports them as "invalid". This is normal (see the section above).
 
 ---
 
-*Son güncelleme / Last updated: 2026-06-10*
+*Son güncelleme / Last updated: 2026-11-23*

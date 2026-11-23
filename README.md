@@ -6,8 +6,7 @@
 
 [![Son Sürüm](https://img.shields.io/github/v/release/EmirhanOzer07/OZR-Pos?label=son%20s%C3%BCr%C3%BCm&color=0066cc&style=for-the-badge)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
 [![Platform](https://img.shields.io/badge/Windows%2010%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
-[![Java](https://img.shields.io/badge/Java%2021-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest)
-[![Güvenlik](https://img.shields.io/badge/AES--256%20+%20JWT-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#-veri-güvenliği--data-security)
+[![Güvenlik](https://img.shields.io/badge/AES--256-dc2626?style=for-the-badge&logo=letsencrypt&logoColor=white)](#-veri-güvenliği--data-security)
 [![Lisans](https://img.shields.io/badge/Lisans-Proprietary-6b7280?style=for-the-badge)](LICENSE.md)
 
 [**🌐 Web Sitemiz / Website**](https://emirhanozer07.github.io/ozrpos-site/) &nbsp;·&nbsp; [**⬇ İndir / Download**](#-kurulum--installation) &nbsp;·&nbsp; [**🔑 Lisans Al / Get License**](#-lisans-ve-iletişim--license--contact) &nbsp;·&nbsp; [**💾 Yedek Rehberi / Backup Guide**](YEDEK_REHBERI.md) &nbsp;·&nbsp; [**📋 Değişiklikler / Changelog**](CHANGELOG.md)
@@ -16,9 +15,9 @@
 
 ---
 
-> **TR** — Küçük ve orta ölçekli marketler için geliştirilmiş, güvenli, internet bağlantısı gerektirmeyen masaüstü kasa yazılımı. Tüm verileriniz şifrelenerek yalnızca kendi bilgisayarınızda saklanır.
+> **TR** — Bakkal, tekel ve küçük marketler için geliştirilmiş, güvenli, internet bağlantısı gerektirmeyen masaüstü kasa yazılımı. Tüm verileriniz şifrelenerek yalnızca kendi bilgisayarınızda saklanır.
 
-> **EN** — A secure, offline-first desktop Point of Sale system for small and medium retail stores. No internet required for daily operations. Your data never leaves your computer.
+> **EN** — A secure, offline-first desktop Point of Sale system for grocery, kiosk and small retail stores. No internet required for daily operations. Your data never leaves your computer.
 
 ---
 
@@ -55,14 +54,14 @@
 |---|---|---|
 | 🛒 Kasa | Barkod okuyucu, **çoklu sepet (3 kasa — aynı anda 3 müşteri)**, nakit/kart ödeme, isimle ürün arama, fiyat sorma, klavye kısayolları | Barcode scanner, **multiple parked carts (3 registers)**, cash/card payment, search by name, price check, keyboard shortcuts |
 | 📒 Veresiye | Müşteri borç defteri: kasadan veresiye satış ve tahsilat, borç limiti, fiş/makbuz, otomatik Excel defter yedeği | Customer credit ledger: credit sales and payments at checkout, credit limits, receipts, automatic Excel ledger backup |
-| 📦 Ürünler | Tekil ekleme veya CSV ile 10.000+ ürün yükleme | Single add or bulk CSV upload (10,000+ products) |
+| 📦 Ürünler | Tekil ekleme veya Excel/CSV listesinden toplu yükleme (dosya başına 10.000 ürüne kadar; Türkçe karakterler ve farklı fiyat yazımları otomatik tanınır) | Single add or bulk Excel/CSV import (up to 10,000 products per file; Turkish characters and price formats recognised automatically) |
 | 👥 Personel | ADMIN ve KASİYER rolleri, şifre değiştirme | ADMIN and CASHIER roles, password management |
 | 📊 Raporlar | Günlük/dönemsel ciro, nakit-kart-veresiye ayrımı | Daily/periodic revenue, cash/card/credit breakdown |
-| 💾 Yedekleme | Her açılışta otomatik SQL yedeği + gece Excel listesi | Auto SQL backup on launch + nightly Excel export |
-| ♻️ Geri Yükleme | Günlük ve işlem yedeklerinden tek tıkla geri dönüş | One-click restore from daily and per-operation backups |
+| 💾 Yedekleme | Günlük + her işlemden sonra şifreli otomatik yedek, günlük Excel ürün listesi | Encrypted automatic daily and per-operation backups, daily Excel product list |
+| ♻️ Geri Yükleme | Günlük ve işlem yedeklerinden geri dönüş; öncesinde mevcut veri ayrıca yedeklenir | Restore from daily and per-operation backups; current data is backed up first |
 | 🔄 Güncelleme | Yeni sürüm bildirimi gelir, tek onayla indirilip uygulanır | Update notification appears; one click downloads and applies it |
 | 🌙 Tema | Karanlık / Aydınlık tema | Dark / Light theme |
-| 🔒 Güvenlik | AES-256 şifreleme, JWT kimlik doğrulama | AES-256 encryption, JWT authentication |
+| 🔒 Güvenlik | Şifreli veritabanı ve yedekler, rol bazlı yetki, giriş denemesi sınırı | Encrypted database and backups, role-based access, login attempt limit |
 
 ---
 
@@ -97,7 +96,7 @@
 
 1. [**Releases**](https://github.com/EmirhanOzer07/OZR-Pos/releases/latest) sayfasından `OZRPos-vX.Y.Z.zip` indirin
 2. ZIP'e sağ tıklayın → **Tümünü Çıkar** → `C:\OZRPos` klasörüne taşıyın
-3. `OZRPos.exe`'ye sağ tıklayın → **Masaüstüne kısayol oluştur**
+3. `OZRPos.exe`'ye sağ tıklayın → **Gönder → Masaüstü (kısayol oluştur)**
 4. Uygulamayı açın → **Demo** ile başlayın veya davetiye kodunuzu girin
 5. Market adı, kullanıcı adı ve şifrenizi belirleyin — kurulum tamamdır
 
@@ -113,7 +112,7 @@
 
 > **⚠️ EN:** Do **NOT** install under `C:\Program Files\` — it blocks auto-updates. Use `C:\OZRPos\` or Desktop.
 
-> **Windows SmartScreen:** "Daha fazla bilgi" → "Yine de çalıştır" / "More info" → "Run anyway"
+> **Windows SmartScreen:** "Ek bilgi" → "Yine de çalıştır" / "More info" → "Run anyway"
 
 ---
 
@@ -124,7 +123,7 @@
 ### TR — Nasıl Lisans Alınır?
 
 1. Uygulamayı kurun ve açın — ilk açılışta **"Demo Başlat"** ile 15 günlük ücretsiz demoyu başlatın
-2. Lisans satın almak için aşağıdaki adrese e-posta gönderin
+2. Lisans almak için WhatsApp'tan ya da e-postayla bize ulaşın
 3. Tarafınıza 8 karakterlik **davetiye kodu** iletilir
 4. Kodu uygulamanın kayıt ekranına girin → marketiniz aktive edilir
 
@@ -133,7 +132,7 @@
 ### EN — How to Get a License
 
 1. Install and open the application — click **"Start Demo"** on first launch for the 15-day free trial
-2. Send an email to the address below to purchase a license
+2. Contact us via WhatsApp or email to purchase a license
 3. You will receive an 8-character **invitation code**
 4. Enter the code on the app's registration screen → your store is activated
 
@@ -141,6 +140,7 @@
 
 | | |
 |---|---|
+| **WhatsApp / Telefon** | [**+90 546 278 23 00**](https://wa.me/905462782300) |
 | **Email / E-posta** | **emirhann0077@gmail.com** |
 | **Yanıt Süresi / Response** | 24 saat içinde / Within 24 hours |
 
@@ -167,13 +167,17 @@
 <details>
 <summary><strong>Birden fazla kasa kullanılabilir mi? / Multiple registers?</strong></summary>
 
-**TR/EN:** Hayır / No. Uygulama tek bilgisayar için tasarlanmıştır / Designed for a single workstation per store.
+**TR:** OZR POS bir market için tek bilgisayarda çalışır. Aynı kasada **3 ayrı sepet** açıp aynı anda 3 müşteriye hizmet verebilirsiniz; ancak birden fazla bilgisayarı ağ üzerinden birbirine bağlamaz.
+
+**EN:** OZR POS runs on a single computer per store. You can keep **3 separate carts** open at the same register to serve 3 customers at once, but it does not network multiple computers together.
 </details>
 
 <details>
 <summary><strong>Kaç ürün eklenebilir? / How many products?</strong></summary>
 
-**TR/EN:** Pratik sınır yoktur. CSV ile tek seferde 10.000+ ürün desteklenir / No practical limit. CSV supports 10,000+ products at once.
+**TR:** Pratik bir ürün sınırı yoktur. Excel/CSV ile toplu yüklemede dosya başına 10.000 ürüne kadar yüklenir; daha büyük listeler birkaç dosyaya bölünerek yüklenebilir.
+
+**EN:** There is no practical product limit. Bulk Excel/CSV import accepts up to 10,000 products per file; larger lists can be split into several files.
 </details>
 
 <details>
@@ -181,11 +185,11 @@
 
 **TR:** Evet — yedek aldıysanız. Detaylı kurtarma rehberi için: [**💾 Yedek ve Kurtarma Rehberi**](YEDEK_REHBERI.md)
 
-Özet: Uygulama her gece otomatik yedek alır. Bu yedekleri Google Drive ile senkronize etmenizi öneririz. Bilgisayar değişirse lisans aktarımı için bizimle iletişime geçin — ücretsizdir.
+Özet: Uygulama her gün ve her önemli işlemden sonra otomatik yedek alır. Bu yedekleri Google Drive ile senkronize etmenizi öneririz. Bilgisayar değişirse lisans aktarımı için bizimle iletişime geçin — ücretsizdir.
 
 **EN:** Yes — if you have backups. See the full guide: [**💾 Backup & Recovery Guide**](YEDEK_REHBERI.md)
 
-Summary: The app takes automatic backups every night. We recommend syncing them to Google Drive. If you change computers, contact us for a free license transfer.
+Summary: The app takes automatic backups every day and after every important operation. We recommend syncing them to Google Drive. If you change computers, contact us for a free license transfer.
 </details>
 
 <details>
@@ -204,11 +208,11 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 | Katman / Layer | Uygulama / Implementation |
 |---|---|
-| Veritabanı / Database | AES şifreli H2, kuruluma özel anahtar / AES-encrypted H2, per-install key |
-| Yedekler / Backups | AES-256/GCM şifreli yedek dosyaları / AES-256/GCM encrypted backup files |
-| Kimlik Doğrulama / Auth | JWT (HMAC-SHA256) + BCrypt |
-| Hız Sınırı / Rate Limit | Giriş denemelerinde IP başına 10 istek/dk / 10 login attempts/min per IP |
-| Yetkilendirme / Authorization | Role tabanlı erişim kontrolü / Role-based access control |
+| Veritabanı / Database | Şifreli, kuruluma özel anahtar / Encrypted, per-install key |
+| Yedekler / Backups | AES-256 şifreli yedek dosyaları / AES-256 encrypted backup files |
+| Şifreler / Passwords | Geri çözülemez biçimde saklanır / Stored in a non-reversible form |
+| Giriş / Login | Hatalı giriş denemeleri sınırlandırılır / Failed login attempts are rate-limited |
+| Yetkilendirme / Authorization | Yönetici ve kasiyer rolleri / Administrator and cashier roles |
 
 > **TR:** Tüm şifreleme anahtarları kurulum sırasında üretilir ve yalnızca sizin makinenizde saklanır. OZR POS, işletme verilerinizi (satış, ürün, müşteri, veresiye) hiçbir sunucuya iletmez.
 
@@ -237,7 +241,7 @@ Tam koşullar için / For full terms: [LICENSE.md](LICENSE.md)
 
 <div align="center">
 
-Spring Boot 3.3 + JavaFX 21 · Windows 10/11
+Windows 10/11 · [Web sitesi / Website](https://emirhanozer07.github.io/ozrpos-site/)
 
 **© 2026 Mustafa Emirhan Özer**
 
