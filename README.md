@@ -220,7 +220,7 @@ Summary: The app takes automatic backups every night. We recommend syncing them 
 
 Tüm sürüm notları için: [**CHANGELOG.md**](CHANGELOG.md)
 
-**Son sürüm / Latest:** v2.3.9 — Veresiye Defteri, isimle ürün arama (`F7`) ve fiyat sorma (`F8`) / Credit ledger, search by name (`F7`) and price check (`F8`)
+**Son sürüm / Latest:** v2.3.10 — Daha akıllı CSV ürün yükleme ve daha güvenli yedek geri yükleme / Smarter CSV product import and safer backup restore
 
 ---
 

@@ -2,6 +2,42 @@
 
 ---
 
+## v2.3.10 — 2026-11-23
+
+### TR — Değişiklikler
+
+**Ürün Yükleme (CSV)**
+- Türkçe Excel'in "CSV (virgülle ayrılmış)" ve "Metin (Sekmeyle ayrılmış)" çıktıları artık doğrudan tanınır; Türkçe karakterler bozulmaz.
+- Başlık satırı olmayan dosyalarda ilk ürün artık atlanmaz.
+- "1.250" gibi binlik mi ondalık mı belli olmayan fiyatlar ve Excel'in bilimsel sayıya çevirdiği barkodlar (ör. `8,69E+12`) sessizce kaydedilmez; hangi satırda olduğu ve nasıl düzeltileceği gösterilir.
+
+**Yedekleme**
+- Bir yedeği geri yüklemeden hemen önce mevcut verinizin otomatik bir yedeği alınır; yanlış yedek seçilse bile önceki duruma dönebilirsiniz.
+- Geri yükleme sonucu ekranda açıkça bildirilir.
+- Yedek dosyaları, yazım sırasında elektrik kesilse bile yarım kalmayacak şekilde kaydedilir.
+
+**Genel**
+- Program zaten açıkken tekrar açılmaya çalışılırsa ikinci bir kopya başlatılmaz, "program zaten açık" uyarısı gösterilir.
+- Güvenlik ve kararlılık iyileştirmeleri.
+
+### EN — Changes
+
+**Product Import (CSV)**
+- Files saved from Turkish Excel as "CSV (comma delimited)" or "Text (tab delimited)" are now recognized directly; Turkish characters are preserved.
+- In files without a header row, the first product is no longer skipped.
+- Ambiguous prices such as "1.250" and barcodes converted to scientific notation by Excel (e.g. `8,69E+12`) are no longer saved silently; the affected row and how to fix it are shown.
+
+**Backups**
+- Before a backup is restored, a backup of your current data is taken automatically, so you can go back even if the wrong backup was chosen.
+- The restore result is clearly shown on screen.
+- Backup files are written so they are never left half-finished, even after a power cut.
+
+**General**
+- If the program is opened while it is already running, a second copy is not started and an "already open" message is shown.
+- Security and stability improvements.
+
+---
+
 ## v2.3.9 — 2026-10-18
 
 ### TR — Değişiklikler
